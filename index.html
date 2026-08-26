@@ -116,7 +116,7 @@
     <div class="stat"><b>12</b><i>public repos, MIT + CI</i></div>
     <div class="stat"><b>840</b><i>CI-verified tests across them</i></div>
     <div class="stat"><b>500k<em>+</em></b><i>LOC private research code</i></div>
-    <div class="stat"><b>1</b><i>production SaaS migrated &amp; shipped</i></div>
+    <div class="stat"><b>3</b><i>systems in production, incl. a revenue SaaS</i></div>
     <div class="stat"><b class="sm">GB2603303.5</b><i>UKIPO patent application filed</i></div>
     <div class="stat"><b>4</b><i>US-gov FOIA responses received</i></div>
   </div>
@@ -224,7 +224,17 @@
     </ul>
   </div>
 
-  <p class="minor">Earlier: Soul Apartments — real-estate intern (2025) · The White Swan — bartender (2024–25) · Jesters — front of house (2025–26). Since 2022: freelance construction &amp; renovation, and a self-funded independent clothing brand run end-to-end.</p>
+  <div class="job" style="margin-top:34px">
+    <div class="head"><h3>Soul Apartments — Real Estate Management (Intern)</h3><span class="when">Jun — Sep 2025 · Southampton</span></div>
+    <p class="role">Day-to-day operations for short-let (Airbnb-style) serviced apartments.</p>
+    <ul>
+      <li><b>Guest operations end to end</b> — enquiries, booking confirmations, check-in coordination and checkout, with same-day resolution of issues raised mid-stay.</li>
+      <li><b>Turnover management between stays</b> — scheduling cleaning and linen changes against the booking calendar, inspecting units to listing standard, and logging maintenance faults for contractor follow-up.</li>
+      <li><b>Listing and calendar upkeep</b> across booking platforms — availability management, pricing updates as directed, and guest-review responses.</li>
+    </ul>
+  </div>
+
+  <p class="minor">Earlier: The White Swan — bartender (2024–25) · Jesters — front of house (2025–26). Since 2022: freelance construction &amp; renovation, and a self-funded independent clothing brand run end-to-end.</p>
 </div></section>
 
 <section id="research"><div class="wrap">
@@ -250,6 +260,12 @@
     <span class="tag">trading systems</span>
     <h3>Systematic trading research platform</h3>
     <p>Strategies feed a central executor through a pre-trade risk gateway and circuit breaker, over a ~25k-LOC, 19-module indicator library — a <span class="num">215-method volatility suite</span> (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang), Bayesian change-point detection, microstructure and order-flow analytics — backed by 500+ unit tests. Forward-test plumbing verified against an Interactive Brokers paper account (full order-lifecycle round-trip; <span class="num">59,650 bars archived</span>). A walk-forward HMM regime gate was rejected on its own evidence — 239 trades over 19 years failed to clear the bootstrap confidence bar, so it does not ship. Paper-trading only by construction. The volatility, statistics and regime-gating layers are published above as ohlc-volatility, quant-stat-lab and regime-lab; the strategy layer stays private.</p>
+  </div>
+
+  <div class="rsr">
+    <span class="tag">machine vision</span>
+    <h3>Image-analysis network stack</h3>
+    <p>A six-level stacked vision architecture for noisy visual input — an L1 reflex layer producing gradient fields, salience maps and per-region uncertainty, up through higher-level structural nets — with a dedicated uncertainty module (noise models, evidence accumulation, attention-energy allocation) and entropy-based filtering in the mid levels. <span class="num">~24k LOC</span>; the self-supervised L1 trained to <span class="num">0.061 validation loss</span>. Built to read rendered web pages as images, where classical parsing fails.</p>
   </div>
 
   <div class="rsr">
