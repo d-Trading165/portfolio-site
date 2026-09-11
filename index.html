@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daniel S. E. Hill — Quantitative &amp; Systems Developer</title>
+<title>Daniel S. E. Hill · Quantitative &amp; Systems Developer</title>
 <meta name="description" content="Junior quant developer / analyst. Python, Rust, TypeScript. Twelve public MIT-licensed repositories with CI-verified test suites. UKIPO patent application filed. Southampton, UK.">
 <style>
   :root{
@@ -58,7 +58,7 @@
   .job .role{color:var(--dim);font-size:.95rem;margin-bottom:14px}
   .job ul{list-style:none;margin:0 0 8px}
   .job li{padding-left:20px;position:relative;color:var(--dim);font-size:.95rem;margin-bottom:10px}
-  .job li::before{content:"—";position:absolute;left:0;color:var(--acc)}
+  .job li::before{content:"–";position:absolute;left:0;color:var(--acc)}
   .job li b{color:var(--text);font-weight:600}
   .minor{color:var(--faint);font-size:.9rem;margin-top:22px;border-top:1px dashed var(--line);padding-top:16px}
 
@@ -105,7 +105,7 @@
 <header class="wrap">
   <div class="kicker">daniel@southampton:~$ whoami</div>
   <h1>Daniel S. E. Hill</h1>
-  <p class="tagline">Quantitative &amp; systems developer. I build trading infrastructure, storage engines and research hardware designs in Python, Rust and TypeScript — and I publish the tests that prove they work.</p>
+  <p class="tagline">Quantitative &amp; systems developer. I build trading infrastructure, storage engines and research hardware designs in Python, Rust and TypeScript. I publish the tests that prove they work.</p>
   <div class="meta">
     <span><a href="mailto:daniel.s.e.hill9@gmail.com">daniel.s.e.hill9@gmail.com</a></span>
     <span><a href="https://github.com/d-Trading165" rel="me">github.com/d-Trading165</a></span>
@@ -122,7 +122,7 @@
   </div>
 
   <div class="principle">
-    Working rule: <q>everything that can be shown is linked — and a backtest you haven't tried to break is a rumour.</q> Test counts are enforced by GitHub Actions on every push, not asserted.
+    Working rule: <q>everything that can be shown is linked, and a backtest you haven't tried to break is a rumour.</q> Test counts are enforced by GitHub Actions on every push, not asserted.
   </div>
 </header>
 
@@ -132,7 +132,7 @@
 
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/execution-engine">execution-engine</a></h3><span class="badge">165 tests · CI</span></div>
-      <p>Broker-agnostic trade execution layer: signal validation chain, pre-trade risk gateway with registerable checks, order/fill/position lifecycle, a seeded simulated broker, and a three-state outcome-level circuit breaker with drawdown-scaled position sizing. Contains no strategy by construction — signals arrive as injected objects.</p>
+      <p>Broker-agnostic trade execution layer: signal validation chain, pre-trade risk gateway with registerable checks, order/fill/position lifecycle, a seeded simulated broker, and a three-state outcome-level circuit breaker with drawdown-scaled position sizing. Contains no strategy by construction: signals arrive as injected objects, so the engine can be tested without one.</p>
       <div class="foot">Python · 4.4k LOC · pure stdlib</div>
     </div>
 
@@ -144,7 +144,7 @@
 
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/tiered-storage-engine">tiered-storage-engine</a></h3><span class="badge">91 tests · CI</span></div>
-      <p>Hot/warm/cold object store with per-payload codec selection and a FastAPI control plane. Benchmarked with the causes written up — including a 288&times; store/retrieve asymmetry traced to triple compression in auto mode. The Rust core ships as source, documented as never compiled; no claim is made for it.</p>
+      <p>Hot/warm/cold object store with per-payload codec selection and a FastAPI control plane. Benchmarked with the causes written up, including a 288&times; store/retrieve asymmetry traced to triple compression in auto mode. The Rust core ships as source, documented as never compiled; no claim is made for it.</p>
       <div class="foot">Python + Rust · benchmarks committed</div>
     </div>
 
@@ -156,31 +156,31 @@
 
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/py-complexity-radar">py-complexity-radar</a></h3><span class="badge">60 tests · CI</span></div>
-      <p>Dependency-free AST-based cyclomatic complexity analyser: per-function scoring, risk banding, JSON/Markdown reports, and trend tracking so complexity drift is visible across runs. Documents exactly where it deviates from strict McCabe — and ships an analysis of its own source as the worked example.</p>
+      <p>Dependency-free AST-based cyclomatic complexity analyser: per-function scoring, risk banding, JSON/Markdown reports, and trend tracking so complexity drift is visible across runs. Documents exactly where it deviates from strict McCabe, and ships an analysis of its own source as the worked example.</p>
       <div class="foot">Python · zero runtime dependencies · CI ratchet flag for pipelines</div>
     </div>
 
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/resilient-pipeline">resilient-pipeline</a></h3><span class="badge">58 tests · CI</span></div>
-      <p>Data standardization plus a four-tier graceful-degradation ladder — retry, fallback calculation, simplified operation, emergency fallback — with domain-specific fallbacks per operation type, quality scoring, and an IQR outlier budget that rejects bad data rather than silently repairing it.</p>
+      <p>Data standardization plus a four-tier degradation ladder: retry, then a fallback calculation, then a simplified operation, then an emergency default. Fallbacks are domain code registered per operation type. Includes quality scoring and an IQR outlier budget that rejects bad data rather than silently repairing it.</p>
       <div class="foot">Python · extracted from the private trading-research system</div>
     </div>
 
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/ohlc-volatility">ohlc-volatility</a></h3><span class="badge">23 tests · CI</span></div>
-      <p>Range-based volatility estimators — Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang — side by side so the numbers can disagree visibly, plus adaptive Bollinger/ATR/Keltner analysis and diagnostics for when GARCH-family models are, and are not, appropriate. A 215-method suite.</p>
+      <p>Runs the range-based volatility estimators (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang) side by side so the numbers can disagree visibly. Adds adaptive Bollinger, ATR and Keltner analysis, and diagnostics for when GARCH-family models are, and are not, appropriate. A 215-method suite.</p>
       <div class="foot">Python · NumPy core, SciPy imported lazily · property-based tests</div>
     </div>
 
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/quant-stat-lab">quant-stat-lab</a></h3><span class="badge">12 tests · CI</span></div>
-      <p>Advanced statistics for noisy series: L-moments, robust statistics, bootstrap analysis, extreme-value analysis, nonparametric tests, and a Bayesian block — conjugate posteriors, change-point detection, Bayes-factor model comparison, and posterior predictive checks.</p>
+      <p>Advanced statistics for noisy series: L-moments, robust statistics, bootstrap analysis, extreme-value analysis, nonparametric tests, and a Bayesian block: conjugate posteriors, change-point detection, Bayes-factor model comparison, and posterior predictive checks.</p>
       <div class="foot">Python + SciPy · validate-then-calculate contract throughout</div>
     </div>
 
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/autonomous-math-lab">autonomous-math-lab</a></h3><span class="badge">132 tests · CI</span></div>
-      <p>An autonomous mathematics research engine: seven pluggable research modules — Collatz, Goldbach, prime distribution, graph theory, symbolic regression, cellular automata, dynamical systems — under expected-value task scheduling with psutil-enforced compute budgets, and an <span class="num">independent verification engine that re-derives findings</span> rather than trusting the module that produced them. Ran unattended for 3 days / 107 research cycles.</p>
+      <p>An autonomous mathematics research engine. Seven pluggable modules (Collatz, Goldbach, prime distribution, graph theory, symbolic regression, cellular automata, dynamical systems) run under expected-value task scheduling with psutil-enforced compute budgets. An <span class="num">independent verification engine re-derives findings</span> rather than trusting the module that produced them. Ran unattended for 3 days / 107 research cycles.</p>
       <div class="foot">Python · ~28k LOC · SQLite/PostgreSQL/MongoDB persistence behind one interface</div>
     </div>
 
@@ -204,68 +204,68 @@
 
   </div>
 
-  <p class="minor">The public record doubles as process evidence: uif-physics' retarded potential was implemented to a pre-existing failing test specification; regime-lab publishes the negative result it was built to find; both CI failures to date (a NumPy 2.0 incompatibility, a pytest collection fault) were diagnosed and fixed the same day; and repairs made during extraction — including an inherited severity-comparison bug — are documented in commit messages rather than hidden.</p>
+  <p class="minor">The public record doubles as process evidence: uif-physics' retarded potential was implemented to a pre-existing failing test specification; regime-lab publishes the negative result it was built to find; both CI failures to date (a NumPy 2.0 incompatibility, a pytest collection fault) were diagnosed and fixed the same day; and repairs made during extraction, including an inherited severity-comparison bug, are documented in commit messages rather than hidden.</p>
 </div></section>
 
 <section id="experience"><div class="wrap">
   <h2><span class="idx">02</span>Experience</h2>
 
   <div class="job">
-    <div class="head"><h3>Regis Bentley — Junior Analyst / Software Developer (Intern)</h3><span class="when">Jul 2026 — present · Southampton</span></div>
+    <div class="head"><h3>Regis Bentley · Junior Analyst / Software Developer (Intern)</h3><span class="when">Jul 2026 – present · Southampton</span></div>
     <p class="role">Sole developer on production systems for an FCA-regulated wealth-management firm.</p>
     <ul>
-      <li><b>Migrated, hardened and extended a live multi-tenant compliance SaaS</b> for UK financial-advice firms — React/TypeScript (~45k LOC), Supabase Postgres with row-level security, 34 Deno edge functions, live Stripe billing — led its move off a low-code host onto standalone infrastructure with a zero-data-loss production cutover against a 49-migration schema (live since Aug 2026). Sole developer, 54/54 commits.</li>
-      <li><b>Enforced tenant isolation across ~50 RLS-scoped tables</b> with an automated harness that provisions throwaway tenants and asserts cross-tenant reads and writes fail — which caught a repo-wide missing-GRANT regression that row-level security alone had masked.</li>
+      <li><b>Migrated, hardened and extended a live multi-tenant compliance SaaS</b> for UK financial-advice firms: React/TypeScript (~45k LOC), Supabase Postgres with row-level security, 34 Deno edge functions, live Stripe billing. Led its move off a low-code host onto standalone infrastructure with a zero-data-loss production cutover against a 49-migration schema, live since Aug 2026. Sole developer, 54/54 commits.</li>
+      <li><b>Enforced tenant isolation across ~50 RLS-scoped tables</b> with an automated harness that provisions throwaway tenants and asserts cross-tenant reads and writes fail. The harness caught a repo-wide missing-GRANT regression that row-level security alone had masked.</li>
       <li><b>Introduced CI to a codebase that had none</b>; escalated typecheck and test suites to hard merge gates after a stale type shipped undetected; grew coverage to 180+ automated tests across frontend and edge functions, including prompt-injection and cross-tenant isolation cases.</li>
-      <li><b>Built AI document-extraction with per-field provenance</b>, citations and confidence scoring, behind mandatory human adjudication — uploaded documents treated as untrusted model input.</li>
+      <li><b>Built AI document-extraction with per-field provenance</b>, citations and confidence scoring, behind mandatory human adjudication. Uploaded documents are treated as untrusted model input.</li>
       <li><b>Built an operations-automation hub in TypeScript</b> unifying client data across five advisory platforms. Money is handled only as integer pence; language models are confined to a single drafting seam and never permitted to transcribe or compute a figure. ~3k LOC of source against ~2.6k LOC of tests, all vendor HTTP mocked at an injectable seam.</li>
-      <li><b>Encoded FCA financial-promotion rules as build failures</b> rather than a review checklist, and delivered a scroll-driven marketing site (Astro + GSAP) with Lighthouse accessibility 100, best-practices 96, CLS 0.001 — enforced by a ~1k-LOC Playwright/axe-core/Lighthouse verification toolchain.</li>
+      <li><b>Encoded FCA financial-promotion rules as build failures</b> rather than a review checklist, and delivered a scroll-driven marketing site (Astro + GSAP) with Lighthouse accessibility 100, best-practices 96, CLS 0.001, enforced by a ~1k-LOC Playwright, axe-core and Lighthouse toolchain.</li>
       <li><b>Wrote a self-hosted MCP media server</b> (Python) replacing a paid third-party service, with request-ID journalling so long-running jobs survive client timeouts.</li>
     </ul>
   </div>
 
   <div class="job" style="margin-top:34px">
-    <div class="head"><h3>Soul Apartments — Real Estate Management (Intern)</h3><span class="when">Jun — Sep 2025 · Southampton</span></div>
+    <div class="head"><h3>Soul Apartments · Real Estate Management (Intern)</h3><span class="when">Jun – Sep 2025 · Southampton</span></div>
     <p class="role">Day-to-day operations for short-let (Airbnb-style) serviced apartments.</p>
     <ul>
-      <li><b>Guest operations end to end</b> — enquiries, booking confirmations, check-in coordination and checkout, with same-day resolution of issues raised mid-stay.</li>
-      <li><b>Turnover management between stays</b> — scheduling cleaning and linen changes against the booking calendar, inspecting units to listing standard, and logging maintenance faults for contractor follow-up.</li>
-      <li><b>Listing and calendar upkeep</b> across booking platforms — availability management, pricing updates as directed, and guest-review responses.</li>
+      <li><b>Guest operations end to end</b>: enquiries, booking confirmations, check-in coordination and checkout, with same-day resolution of issues raised mid-stay.</li>
+      <li><b>Turnover management between stays</b>: scheduling cleaning and linen changes against the booking calendar, inspecting units to listing standard, and logging maintenance faults for contractor follow-up.</li>
+      <li><b>Listing and calendar upkeep</b> across booking platforms: availability management, pricing updates as directed, and guest-review responses.</li>
     </ul>
   </div>
 
-  <p class="minor">Earlier: The White Swan — bartender (2024–25) · Jesters — front of house (2025–26). Since 2022: freelance construction &amp; renovation, and a self-funded independent clothing brand run end-to-end.</p>
+  <p class="minor">Earlier: The White Swan, bartender (2024–25) · Jesters, front of house (2025–26). Since 2022: freelance construction &amp; renovation, and a self-funded independent clothing brand run end-to-end.</p>
 </div></section>
 
 <section id="research"><div class="wrap">
   <h2><span class="idx">03</span>Independent research &amp; systems</h2>
-  <p style="color:var(--faint);margin:-16px 0 26px;font-size:.9rem">Private code — methods and results discussed freely in interview.</p>
+  <p style="color:var(--faint);margin:-16px 0 26px;font-size:.9rem">Private code; methods and results discussed freely in interview.</p>
 
   <div class="feature">
     <span class="tag">featured · data integrity</span>
     <h3>Auction mispricing scanner</h3>
     <p>Harvests auction sitemaps (~150k lots), extracts metal, purity and weight from lot titles and condition reports, and prices against live spot with FX conversion. Backtested over 40 closed auctions covering <span class="num">24,291 lots: 4 verified wins, £1,635 deployed, +£820 realised (~50% blended return on deployed capital)</span>.</p>
-    <p class="pull">The number I'm prouder of is the one before it: the first backtest reported 62 wins and £18k of profit — all phantom. I traced 16 root causes, encoded each as a domain rule, and locked them behind 36 regression tests.</p>
+    <p class="pull">The number I'm prouder of is the one before it: the first backtest reported 62 wins and £18k of profit, all of it phantom. I traced 16 root causes, encoded each as a domain rule, and locked them behind 36 regression tests.</p>
   </div>
 
   <div class="feature">
     <span class="tag">featured · research hardware</span>
-    <h3>Neuromorphic computing system — "InteI" (formerly Dual ML)</h3>
-    <p>An analogue "artificial subconscious": neuromodulator circuit models (dopamine, serotonin, noradrenaline, acetylcholine), Kuramoto oscillator banks, and physical-substrate simulation — ionic diffusion validated against Fick's law, surface-acoustic-wave propagation, and phase-shifting interferometry with tomographic 3D reconstruction. <span class="num">~43k LOC, 325 tests, 15 LTSpice schematics</span>, embedded C++ firmware, and a costed BOM with production part numbers (STM32F407, Artix-7, ADS1256). UKIPO patent application <span class="num">GB2603303.5</span> filed Feb 2026.</p>
-    <p class="pull">After two years I audited my own timescale assumptions from first principles, found order-of-magnitude errors — the ionic chamber responds in hours, not milliseconds — froze v1, and restarted behind a falsify-first gate: the cheapest disproving experiment runs before any build spend.</p>
-    <p class="sitelink">→ <a href="https://d-trading165.github.io/Dual-ML-Proposal/">Interactive proposal site</a> — in-browser substrate simulations + 3D hardware viewer</p>
+    <h3>Neuromorphic computing system: "InteI" (formerly Dual ML)</h3>
+    <p>An analogue "artificial subconscious": neuromodulator circuit models (dopamine, serotonin, noradrenaline, acetylcholine), Kuramoto oscillator banks, and physical-substrate simulation: ionic diffusion validated against Fick's law, surface-acoustic-wave propagation, and phase-shifting interferometry with tomographic 3D reconstruction. <span class="num">~43k LOC, 325 tests, 15 LTSpice schematics</span>, embedded C++ firmware, and a costed BOM with production part numbers (STM32F407, Artix-7, ADS1256). UKIPO patent application <span class="num">GB2603303.5</span> filed Feb 2026.</p>
+    <p class="pull">After two years I audited my own timescale assumptions from first principles and found order-of-magnitude errors; the ionic chamber responds in hours, not milliseconds. I froze v1 and restarted behind a falsify-first gate: the cheapest disproving experiment runs before any build spend.</p>
+    <p class="sitelink">→ <a href="https://d-trading165.github.io/Dual-ML-Proposal/">Interactive proposal site</a>: in-browser substrate simulations and a 3D hardware viewer</p>
   </div>
 
   <div class="rsr">
     <span class="tag">trading systems</span>
     <h3>Systematic trading research platform</h3>
-    <p>Strategies feed a central executor through a pre-trade risk gateway and circuit breaker, over a ~25k-LOC, 19-module indicator library — a <span class="num">215-method volatility suite</span> (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang), Bayesian change-point detection, microstructure and order-flow analytics — backed by 500+ unit tests. Forward-test plumbing verified against an Interactive Brokers paper account (full order-lifecycle round-trip; <span class="num">59,650 bars archived</span>). A walk-forward HMM regime gate was rejected on its own evidence — 239 trades over 19 years failed to clear the bootstrap confidence bar, so it does not ship. Paper-trading only by construction. The volatility, statistics and regime-gating layers are published above as ohlc-volatility, quant-stat-lab and regime-lab; the strategy layer stays private.</p>
+    <p>Strategies feed a central executor through a pre-trade risk gateway and circuit breaker, over a 19-module, ~25k-LOC indicator library backed by 500+ unit tests: a <span class="num">215-method volatility suite</span> (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang), Bayesian change-point detection, and microstructure and order-flow analytics. Forward-test plumbing verified against an Interactive Brokers paper account (full order-lifecycle round-trip; <span class="num">59,650 bars archived</span>). A walk-forward HMM regime gate was rejected on its own evidence: 239 trades over 19 years failed to clear the bootstrap confidence bar, so it does not ship. Paper-trading only by construction. The volatility, statistics and regime-gating layers are published above as ohlc-volatility, quant-stat-lab and regime-lab; the strategy layer stays private.</p>
   </div>
 
   <div class="rsr">
     <span class="tag">machine vision</span>
     <h3>Image-analysis network stack</h3>
-    <p>A six-level stacked vision architecture for noisy visual input — an L1 reflex layer producing gradient fields, salience maps and per-region uncertainty, up through higher-level structural nets — with a dedicated uncertainty module (noise models, evidence accumulation, attention-energy allocation) and entropy-based filtering in the mid levels. <span class="num">~24k LOC</span>; the self-supervised L1 trained to <span class="num">0.061 validation loss</span>. Built to read rendered web pages as images, where classical parsing fails.</p>
+    <p>A six-level stacked vision architecture for noisy visual input, from an L1 reflex layer (gradient fields, salience maps, per-region uncertainty) up through higher-level structural nets. A dedicated uncertainty module handles noise models, evidence accumulation and attention-energy allocation, with entropy-based filtering in the mid levels. <span class="num">~24k LOC</span>; the self-supervised L1 trained to <span class="num">0.061 validation loss</span>. Built to read rendered web pages as images, where classical parsing fails.</p>
   </div>
 
   <div class="rsr">
@@ -290,8 +290,8 @@
 <section id="education"><div class="wrap">
   <h2><span class="idx">05</span>Education</h2>
   <div class="edu">
-    <div class="card"><h3>Richard Taunton Sixth Form College</h3><p>A-Levels: Mathematics, Economics, Business Studies — 2026</p></div>
-    <div class="card"><h3>King Edward VI School</h3><p>12 GCSEs, average grade 7.5 — 2024</p></div>
+    <div class="card"><h3>Richard Taunton Sixth Form College</h3><p>A-Levels: Mathematics, Economics, Business Studies, 2026</p></div>
+    <div class="card"><h3>King Edward VI School</h3><p>12 GCSEs, average grade 7.5, 2024</p></div>
   </div>
 </div></section>
 
@@ -300,7 +300,7 @@
   <p class="sub">Everything above that can be shown is linked. Happy to walk through any repo, test suite or backtest live.</p>
   <a class="btn" href="mailto:daniel.s.e.hill9@gmail.com">email me</a>
   <a class="btn" href="https://github.com/d-Trading165">github</a>
-  <div class="fine">Daniel S. E. Hill · Southampton, UK · British citizen, full right to work<br>No trackers, no analytics, no cookies — view source.</div>
+  <div class="fine">Daniel S. E. Hill · Southampton, UK · British citizen, full right to work<br>No trackers, no analytics, no cookies. View source.</div>
 </div></footer>
 
 </body>
