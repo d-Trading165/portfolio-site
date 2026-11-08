@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daniel S. E. Hill · Quantitative &amp; Systems Developer</title>
+<title>Daniel S. E. Hill · Analyst &amp; Developer · Finance, Data &amp; Economics</title>
 <meta name="description" content="Junior quant developer / analyst. Python, Rust, TypeScript. Twelve public MIT-licensed repositories with CI-verified test suites. UKIPO patent application filed. Southampton, UK.">
 <style>
   :root{
@@ -32,12 +32,13 @@
   .meta a{color:var(--text)}
   .meta span::before{content:"▸ ";color:var(--acc);font-size:.7rem}
 
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:40px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:40px}
   .stat{background:var(--card);padding:18px 14px}
   .stat b{display:block;font-size:1.4rem;font-family:var(--mono);color:var(--text);font-weight:600;white-space:nowrap}
   .stat b.sm{font-size:.95rem;line-height:2.1}
   .stat i{font-style:normal;color:var(--faint);font-size:.76rem;letter-spacing:.05em}
   .stat b em{font-style:normal;color:var(--acc);font-size:1rem}
+  @media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
 
   .principle{border-left:3px solid var(--acc);background:var(--bg2);padding:16px 20px;border-radius:0 8px 8px 0;color:var(--dim);font-size:.98rem;margin-top:36px}
   .principle q{color:var(--text);font-style:italic}
@@ -95,8 +96,8 @@
 <body>
 
 <nav><div class="wrap">
-  <a href="#open-source">open-source</a>
   <a href="#experience">experience</a>
+  <a href="#open-source">open-source</a>
   <a href="#research">research</a>
   <a href="#skills">skills</a>
   <a href="#contact">contact</a>
@@ -105,7 +106,7 @@
 <header class="wrap">
   <div class="kicker">daniel@southampton:~$ whoami</div>
   <h1>Daniel S. E. Hill</h1>
-  <p class="tagline">Quantitative &amp; systems developer. I build trading infrastructure, storage engines and research hardware designs in Python, Rust and TypeScript. I publish the tests that prove they work.</p>
+  <p class="tagline">Analyst and developer across finance, data and economics. A-levels in Mathematics and Economics, production systems for an FCA-regulated wealth manager, and trading infrastructure, storage engines and research hardware designs in Python, Rust and TypeScript. I publish the tests that prove they work.</p>
   <div class="meta">
     <span><a href="mailto:daniel.s.e.hill9@gmail.com">daniel.s.e.hill9@gmail.com</a></span>
     <span><a href="https://github.com/d-Trading165" rel="me">github.com/d-Trading165</a></span>
@@ -113,10 +114,12 @@
   </div>
 
   <div class="stats">
+    <div class="stat"><b class="sm">Deutsche Bank</b><i>Pathways to Banking &amp; Finance, completed</i></div>
     <div class="stat"><b>12</b><i>public repos, MIT + CI</i></div>
     <div class="stat"><b>840</b><i>CI-verified tests across them</i></div>
-    <div class="stat"><b>500k<em>+</em></b><i>LOC private research code</i></div>
+    <div class="stat"><b>24,291</b><i>auction lots backtested, +£820 realised</i></div>
     <div class="stat"><b>3</b><i>systems in production, incl. a revenue SaaS</i></div>
+    <div class="stat"><b>500k<em>+</em></b><i>LOC private research code</i></div>
     <div class="stat"><b class="sm">GB2603303.5</b><i>UKIPO patent application filed</i></div>
     <div class="stat"><b>4</b><i>US-gov FOIA responses received</i></div>
   </div>
@@ -126,8 +129,48 @@
   </div>
 </header>
 
+<section id="experience"><div class="wrap">
+  <h2><span class="idx">01</span>Experience</h2>
+
+  <div class="job">
+    <div class="head"><h3>Regis Bentley · Junior Analyst / Software Developer (Intern)</h3><span class="when">Jul 2026 – present · Southampton</span></div>
+    <p class="role">Sole developer on production systems for an FCA-regulated wealth-management firm.</p>
+    <ul>
+      <li><b>Migrated, hardened and extended a live multi-tenant compliance SaaS</b> for UK financial-advice firms: React/TypeScript (~45k LOC), Supabase Postgres with row-level security, 34 Deno edge functions, live Stripe billing. Led its move off a low-code host onto standalone infrastructure with a zero-data-loss production cutover against a 49-migration schema, live since Aug 2026. Sole developer, 54/54 commits.</li>
+      <li><b>Enforced tenant isolation across ~50 RLS-scoped tables</b> with an automated harness that provisions throwaway tenants and asserts cross-tenant reads and writes fail. The harness caught a repo-wide missing-GRANT regression that row-level security alone had masked.</li>
+      <li><b>Introduced CI to a codebase that had none</b>; escalated typecheck and test suites to hard merge gates after a stale type shipped undetected; grew coverage to 180+ automated tests across frontend and edge functions, including prompt-injection and cross-tenant isolation cases.</li>
+      <li><b>Built AI document-extraction with per-field provenance</b>, citations and confidence scoring, behind mandatory human adjudication. Uploaded documents are treated as untrusted model input.</li>
+      <li><b>Built an operations-automation hub in TypeScript</b> unifying client data across five advisory platforms. Money is handled only as integer pence; language models are confined to a single drafting seam and never permitted to transcribe or compute a figure. ~3k LOC of source against ~2.6k LOC of tests, all vendor HTTP mocked at an injectable seam.</li>
+      <li><b>Encoded FCA financial-promotion rules as build failures</b> rather than a review checklist, and delivered a scroll-driven marketing site (Astro + GSAP) with Lighthouse accessibility 100, best-practices 96, CLS 0.001, enforced by a ~1k-LOC Playwright, axe-core and Lighthouse toolchain.</li>
+      <li><b>Wrote a self-hosted MCP media server</b> (Python) replacing a paid third-party service, with request-ID journalling so long-running jobs survive client timeouts.</li>
+    </ul>
+  </div>
+
+  <div class="job" style="margin-top:34px">
+    <div class="head"><h3>Soul Apartments · Real Estate Management (Intern)</h3><span class="when">Jun – Sep 2025 · Southampton</span></div>
+    <p class="role">Day-to-day operations for short-let (Airbnb-style) serviced apartments.</p>
+    <ul>
+      <li><b>Guest operations end to end</b>: enquiries, booking confirmations, check-in coordination and checkout, with same-day resolution of issues raised mid-stay.</li>
+      <li><b>Turnover management between stays</b>: scheduling cleaning and linen changes against the booking calendar, inspecting units to listing standard, and logging maintenance faults for contractor follow-up.</li>
+      <li><b>Listing and calendar upkeep</b> across booking platforms: availability management, pricing updates as directed, and guest-review responses.</li>
+    </ul>
+  </div>
+
+  <div class="job" style="margin-top:34px">
+    <div class="head"><h3>Sutton Trust &amp; Deutsche Bank · Pathways to Banking &amp; Finance</h3><span class="when">2024 – 26 · London</span></div>
+    <p class="role">Completed the Sutton Trust's 18-month programme for Year 12 students studying A-level Mathematics, run with Deutsche Bank as founding corporate partner.</p>
+    <ul>
+      <li><b>Work-experience placement at Deutsche Bank's London office</b>: shadowing staff across divisions, workshops on CV writing, interviewing and personal brand, and a Q&amp;A panel with recent graduate hires.</li>
+      <li><b>Employer insight events and skills workshops</b> through the programme: presenting, negotiating and networking, plus a mock assessment centre and application support.</li>
+      <li><b>University taster lectures</b> in economics and finance, with mentoring from current finance undergraduates.</li>
+    </ul>
+  </div>
+
+  <p class="minor">Earlier: The White Swan, bartender (2024–25) · Jesters, front of house (2025–26). Since 2022: freelance construction &amp; renovation, and a self-funded independent clothing brand run end-to-end.</p>
+</div></section>
+
 <section id="open-source"><div class="wrap">
-  <h2><span class="idx">01</span>Open-source portfolio</h2>
+  <h2><span class="idx">02</span>Open-source portfolio</h2>
   <div class="grid">
 
     <div class="card">
@@ -207,36 +250,6 @@
   <p class="minor">The public record doubles as process evidence: uif-physics' retarded potential was implemented to a pre-existing failing test specification; regime-lab publishes the negative result it was built to find; both CI failures to date (a NumPy 2.0 incompatibility, a pytest collection fault) were diagnosed and fixed the same day; and repairs made during extraction, including an inherited severity-comparison bug, are documented in commit messages rather than hidden.</p>
 </div></section>
 
-<section id="experience"><div class="wrap">
-  <h2><span class="idx">02</span>Experience</h2>
-
-  <div class="job">
-    <div class="head"><h3>Regis Bentley · Junior Analyst / Software Developer (Intern)</h3><span class="when">Jul 2026 – present · Southampton</span></div>
-    <p class="role">Sole developer on production systems for an FCA-regulated wealth-management firm.</p>
-    <ul>
-      <li><b>Migrated, hardened and extended a live multi-tenant compliance SaaS</b> for UK financial-advice firms: React/TypeScript (~45k LOC), Supabase Postgres with row-level security, 34 Deno edge functions, live Stripe billing. Led its move off a low-code host onto standalone infrastructure with a zero-data-loss production cutover against a 49-migration schema, live since Aug 2026. Sole developer, 54/54 commits.</li>
-      <li><b>Enforced tenant isolation across ~50 RLS-scoped tables</b> with an automated harness that provisions throwaway tenants and asserts cross-tenant reads and writes fail. The harness caught a repo-wide missing-GRANT regression that row-level security alone had masked.</li>
-      <li><b>Introduced CI to a codebase that had none</b>; escalated typecheck and test suites to hard merge gates after a stale type shipped undetected; grew coverage to 180+ automated tests across frontend and edge functions, including prompt-injection and cross-tenant isolation cases.</li>
-      <li><b>Built AI document-extraction with per-field provenance</b>, citations and confidence scoring, behind mandatory human adjudication. Uploaded documents are treated as untrusted model input.</li>
-      <li><b>Built an operations-automation hub in TypeScript</b> unifying client data across five advisory platforms. Money is handled only as integer pence; language models are confined to a single drafting seam and never permitted to transcribe or compute a figure. ~3k LOC of source against ~2.6k LOC of tests, all vendor HTTP mocked at an injectable seam.</li>
-      <li><b>Encoded FCA financial-promotion rules as build failures</b> rather than a review checklist, and delivered a scroll-driven marketing site (Astro + GSAP) with Lighthouse accessibility 100, best-practices 96, CLS 0.001, enforced by a ~1k-LOC Playwright, axe-core and Lighthouse toolchain.</li>
-      <li><b>Wrote a self-hosted MCP media server</b> (Python) replacing a paid third-party service, with request-ID journalling so long-running jobs survive client timeouts.</li>
-    </ul>
-  </div>
-
-  <div class="job" style="margin-top:34px">
-    <div class="head"><h3>Soul Apartments · Real Estate Management (Intern)</h3><span class="when">Jun – Sep 2025 · Southampton</span></div>
-    <p class="role">Day-to-day operations for short-let (Airbnb-style) serviced apartments.</p>
-    <ul>
-      <li><b>Guest operations end to end</b>: enquiries, booking confirmations, check-in coordination and checkout, with same-day resolution of issues raised mid-stay.</li>
-      <li><b>Turnover management between stays</b>: scheduling cleaning and linen changes against the booking calendar, inspecting units to listing standard, and logging maintenance faults for contractor follow-up.</li>
-      <li><b>Listing and calendar upkeep</b> across booking platforms: availability management, pricing updates as directed, and guest-review responses.</li>
-    </ul>
-  </div>
-
-  <p class="minor">Earlier: The White Swan, bartender (2024–25) · Jesters, front of house (2025–26). Since 2022: freelance construction &amp; renovation, and a self-funded independent clothing brand run end-to-end.</p>
-</div></section>
-
 <section id="research"><div class="wrap">
   <h2><span class="idx">03</span>Independent research &amp; systems</h2>
   <p style="color:var(--faint);margin:-16px 0 26px;font-size:.9rem">Private code; methods and results discussed freely in interview.</p>
@@ -296,7 +309,7 @@
 </div></section>
 
 <footer id="contact"><div class="wrap">
-  <div class="cta">Looking for a junior quant developer / analyst?</div>
+  <div class="cta">Hiring for a junior analyst, quant developer or data role?</div>
   <p class="sub">Everything above that can be shown is linked. Happy to walk through any repo, test suite or backtest live.</p>
   <a class="btn" href="mailto:daniel.s.e.hill9@gmail.com">email me</a>
   <a class="btn" href="https://github.com/d-Trading165">github</a>
