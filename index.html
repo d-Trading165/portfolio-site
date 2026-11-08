@@ -68,8 +68,6 @@
   .rsr .tag{font-family:var(--mono);font-size:.72rem;color:var(--warn);letter-spacing:.08em;text-transform:uppercase}
   .rsr p{color:var(--dim);font-size:.95rem;max-width:840px}
   .rsr .num{color:var(--text);font-family:var(--mono);font-size:.88rem}
-  .feature{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:10px;padding:24px;margin-bottom:26px}
-  .feature p{margin-top:8px}
   .feature .pull{color:var(--text);font-style:italic;margin-top:14px;font-size:.95rem}
   .feature .sitelink{margin-top:14px;font-family:var(--mono);font-size:.85rem}
 
@@ -253,14 +251,14 @@
   <h2><span class="idx">03</span>Independent research &amp; systems</h2>
   <p style="color:var(--faint);margin:-16px 0 26px;font-size:.9rem">Private code; methods and results discussed freely in interview.</p>
 
-  <div class="feature">
+  <div class="rsr feature">
     <span class="tag">featured · data integrity</span>
     <h3>Auction mispricing scanner</h3>
     <p>Harvests auction sitemaps (~150k lots), extracts metal, purity and weight from lot titles and condition reports, and prices against live spot with FX conversion. Backtested over 40 closed auctions covering <span class="num">24,291 lots: 4 verified wins, £1,635 deployed, +£820 realised (~50% blended return on deployed capital)</span>.</p>
     <p class="pull">The number I'm prouder of is the one before it: the first backtest reported 62 wins and £18k of profit, all of it phantom. I traced 16 root causes, encoded each as a domain rule, and locked them behind 36 regression tests.</p>
   </div>
 
-  <div class="feature">
+  <div class="rsr feature">
     <span class="tag">featured · research hardware</span>
     <h3>Neuromorphic computing system: "InteI" (formerly Dual ML)</h3>
     <p>An analogue "artificial subconscious": neuromodulator circuit models (dopamine, serotonin, noradrenaline, acetylcholine), Kuramoto oscillator banks, and physical-substrate simulation: ionic diffusion validated against Fick's law, surface-acoustic-wave propagation, and phase-shifting interferometry with tomographic 3D reconstruction. <span class="num">~43k LOC, 325 tests, 15 LTSpice schematics</span>, embedded C++ firmware, and a costed BOM with production part numbers (STM32F407, Artix-7, ADS1256). UKIPO patent application <span class="num">GB2603303.5</span> filed Feb 2026.</p>
