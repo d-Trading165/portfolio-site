@@ -4,314 +4,511 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Daniel S. E. Hill · Analyst &amp; Developer · Finance, Data &amp; Economics</title>
-<meta name="description" content="Junior quant developer / analyst. Python, Rust, TypeScript. Twelve public MIT-licensed repositories with CI-verified test suites. UKIPO patent application filed. Southampton, UK.">
+<meta name="description" content="Junior quant developer / analyst. Python, Rust, TypeScript. Eleven public MIT-licensed repositories with CI-verified test suites. UKIPO patent application filed. Southampton, UK.">
 <style>
-  :root{
-    --bg:#fafbfc; --bg2:#f1f4f8; --card:#ffffff; --line:#dfe5ec;
-    --text:#1c2530; --dim:#46536a; --faint:#7b8798;
-    --acc:#177a63; --acc2:#3563c4; --warn:#9a6a10;
-    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
-    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;font-size:16px}
-  a{color:var(--acc);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
-  section{padding:56px 0;border-top:1px solid var(--line)}
-  h2{font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:28px;font-family:var(--mono);font-weight:600}
-  h2 .idx{color:var(--faint);margin-right:8px}
-  h3{font-size:1.12rem;color:var(--text)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{text-decoration:none}
+.wrap{max-width:var(--maxw,980px);margin:0 auto;padding:0 24px}
+.switch{position:fixed;right:12px;bottom:12px;z-index:50;display:flex;gap:6px;font:600 11px/1 system-ui,sans-serif;background:#111;padding:6px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.switch a{color:#ddd;padding:6px 10px;border-radius:999px}
+.switch a.on{background:#fff;color:#111}
+.switch a:hover{background:#333;color:#fff}
+.switch a.on:hover{background:#fff;color:#111}
+@media(max-width:600px){.switch{left:12px;right:12px;justify-content:center;flex-wrap:wrap;border-radius:14px;font-size:10px}.switch a{padding:5px 7px}}
+.job ul{list-style:none}
+.job li{position:relative;padding-left:20px;margin-bottom:10px}
+.job li::before{position:absolute;left:0}
+.grid{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;gap:10px}
+.card .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 10px}
+.card h3{min-width:0;overflow-wrap:anywhere}
+.card p{flex:1}
+.card.wide{grid-column:1/-1}
+.job .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px;margin-bottom:6px}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:12px 24px}
+@media(max-width:600px){.skills{grid-template-columns:1fr;gap:4px}}
+.edu{display:flex;flex-wrap:wrap;gap:18px}
+.edu .card{flex:1;min-width:260px}
+.edu .card p{flex:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:1px}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat b{display:block;white-space:nowrap}
+.stat i{font-style:normal;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px}
+nav .wrap{display:flex;gap:22px;align-items:center;overflow-x:auto}
+nav a{white-space:nowrap}
+nav .brand{margin-right:auto;font-weight:700;white-space:nowrap}
+footer{text-align:center}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block}
+section .sub{margin:-16px 0 26px}
+.dl{margin-top:22px}
+.minor.refs{border-top:0;margin-top:8px;padding-top:0}
+.po{display:none!important}
 
-  header{padding:72px 0 48px}
-  .kicker{font-family:var(--mono);color:var(--acc);font-size:.85rem;margin-bottom:14px}
-  h1{font-size:clamp(2rem,5vw,3rem);line-height:1.12;font-weight:700;letter-spacing:-.01em}
-  .tagline{color:var(--dim);font-size:1.12rem;margin:18px 0 26px;max-width:660px}
-  .meta{display:flex;flex-wrap:wrap;gap:10px 22px;font-family:var(--mono);font-size:.85rem;color:var(--dim)}
-  .meta a{color:var(--text)}
-  .meta span::before{content:"▸ ";color:var(--acc);font-size:.7rem}
+:root{
+  --maroon:#B83556; --maroon-deep:#8E2641; --pink:#DC97A5; --pink-soft:#F3CFD6;
+  --blue:#55768C; --blue-deep:#3F5A6C; --lumber:#FADED2; --choc:#845747; --choc-deep:#4A2F27;
+  --cream:#FFF8F3; --panel:#FFFDFB; --line:#E9D3C8;
+  --text:#4A2F27; --dim:#6E4A3E; --faint:#9A7A6E;
+  --serif:"Georgia","Iowan Old Style","Palatino Linotype","Book Antiqua",serif;
+  --sans:"Segoe UI",Inter,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Cascadia Code","SFMono-Regular",Consolas,Menlo,monospace;
+  --maxw:1020px;
+}
+body{background:var(--cream);color:var(--text);font-family:var(--sans)}
+a{color:var(--maroon)}
+a:hover{text-decoration:underline}
+::selection{background:var(--pink);color:var(--choc-deep)}
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(255,248,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{padding:16px 24px;font-size:.84rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+nav a{color:var(--choc);position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--maroon);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+nav a:hover{color:var(--maroon);text-decoration:none}
+nav a:hover::after{transform:scaleX(1)}
+nav .brand{font-family:var(--serif);text-transform:none;letter-spacing:0;font-size:1.1rem;color:var(--choc-deep)}
+nav .brand::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--maroon);margin-right:10px;vertical-align:middle}
+/* hero */
+header{position:relative;overflow:hidden;background:var(--choc-deep);color:var(--lumber);padding:96px 0 0;
+  background-image:radial-gradient(ellipse 55% 60% at 85% 10%,rgba(184,53,86,.45),transparent 70%),radial-gradient(ellipse 40% 50% at 0% 100%,rgba(85,118,140,.35),transparent 70%)}
+header .wrap{position:relative}
+header .mark{position:absolute;right:-20px;top:-70px;font-family:var(--serif);font-size:clamp(14rem,34vw,26rem);line-height:1;color:var(--pink);opacity:.14;letter-spacing:-.08em;pointer-events:none;user-select:none}
+header .kicker{font-size:.76rem;letter-spacing:.28em;text-transform:uppercase;color:var(--pink);margin-bottom:22px;font-weight:700}
+header h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,8vw,5.4rem);line-height:.98;letter-spacing:-.02em;color:#fff;max-width:720px}
+header h1::after{content:"";display:block;width:96px;height:3px;background:var(--pink);margin:28px 0 28px}
+header .tagline{font-size:1.12rem;color:var(--lumber);max-width:640px;line-height:1.7;margin-bottom:28px}
+header .meta{font-size:.86rem;gap:10px}
+header .meta span{background:rgba(250,222,210,.1);border:1px solid rgba(250,222,210,.25);border-radius:999px;padding:6px 14px;color:var(--lumber)}
+header .meta a{color:#fff}
+header .dl .btn{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:12px 24px;border-radius:999px;background:var(--pink);color:var(--choc-deep);border:0}
+header .dl .btn:hover{background:#fff;text-decoration:none}
+/* stat tickets */
+header .stats{margin-top:56px;grid-template-columns:repeat(4,1fr);gap:14px;background:transparent}
+header .stat{background:var(--lumber);color:var(--choc-deep);border-radius:12px;padding:20px 18px 18px;position:relative;overflow:hidden}
+header .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--maroon)}
+header .stat:nth-child(4n+2)::before{background:var(--blue)}
+header .stat:nth-child(4n+3)::before{background:var(--pink)}
+header .stat:nth-child(4n+4)::before{background:var(--choc)}
+header .stat b{font-family:var(--serif);font-size:2.2rem;line-height:1;font-weight:400;color:var(--maroon-deep);margin-left:8px}
+header .stat b.sm{font-size:1.05rem;line-height:2.1;font-family:var(--mono);letter-spacing:-.02em}
+header .stat i{font-size:.74rem;color:var(--choc);margin:8px 0 0 8px;line-height:1.35}
+@media(max-width:860px){header .stats{grid-template-columns:repeat(2,1fr)}}
+header .principle{margin:48px -24px 0;padding:26px 24px;background:var(--lumber);color:var(--choc-deep);font-family:var(--serif);font-size:1.12rem;text-align:center}
+header .principle q{font-style:italic;color:var(--maroon-deep)}
+/* marquee */
+.marquee{background:var(--maroon);color:var(--lumber);overflow:hidden;white-space:nowrap;padding:12px 0;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink)}
+.marquee .track{display:inline-flex;gap:0;animation:slide 48s linear infinite;will-change:transform}
+.marquee span{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;padding:0 22px;display:inline-block}
+.marquee span::after{content:"º6";color:var(--pink);margin-left:44px}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+/* sections */
+section{padding:88px 0;position:relative}
+section:nth-of-type(even){background:var(--lumber)}
+section:nth-of-type(even) .card,section:nth-of-type(even) .job{background:var(--panel)}
+h2{font-family:var(--serif);font-weight:400;font-size:2.4rem;letter-spacing:-.01em;margin-bottom:44px;position:relative;z-index:1;padding-top:30px}
+h2 .idx{position:absolute;left:-12px;top:-28px;z-index:-1;font-family:var(--serif);font-size:7.5rem;line-height:1;color:var(--pink);opacity:.45;letter-spacing:-.06em;font-style:italic}
+h2::after{content:"";display:block;width:54px;height:3px;background:var(--maroon);margin-top:14px}
+h3{font-family:var(--serif);font-weight:400;font-size:1.35rem;color:var(--choc-deep)}
+/* experience timeline */
+.job{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px 34px;margin:0 0 28px 30px;box-shadow:8px 8px 0 var(--pink-soft);transition:box-shadow .2s,transform .2s}
+.job:hover{transform:translate(-2px,-2px);box-shadow:12px 12px 0 var(--pink)}
+.job::before{content:"";position:absolute;left:-30px;top:-14px;bottom:-42px;width:2px;background:var(--pink)}
+.job:last-of-type::before{bottom:50%}
+.job::after{content:"";position:absolute;left:-36px;top:34px;width:14px;height:14px;border-radius:50%;background:var(--maroon);box-shadow:0 0 0 4px var(--cream)}
+section:nth-of-type(even) .job::after{box-shadow:0 0 0 4px var(--lumber)}
+.job .head{margin-bottom:8px}
+.job h3 .rolename{color:var(--dim);font-size:1.05rem;font-family:var(--sans)}
+.job .sep{color:var(--pink)}
+.job .when{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--blue);border-radius:999px;padding:5px 12px;font-weight:700;white-space:nowrap}
+.job .role{color:var(--dim);margin-bottom:16px;font-family:var(--serif);font-style:italic;font-size:1.02rem}
+.job li{color:var(--dim);font-size:.95rem;padding-left:24px}
+.job li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--pink);top:.55em;outline:2px solid var(--pink);outline-offset:2px}
+.job li b{color:var(--text);font-weight:600}
+.minor{color:var(--faint);font-size:.9rem;margin:34px 0 0 30px;font-style:italic;font-family:var(--serif)}
+/* repo cards */
+.grid{gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card::before{content:"";position:absolute;left:26px;right:26px;top:0;height:3px;background:var(--pink);border-radius:0 0 3px 3px;transition:background .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(132,87,71,.16);border-color:var(--pink)}
+.card:hover::before{background:var(--maroon)}
+.card h3{font-family:var(--mono);font-size:.96rem;font-weight:600}
+.card h3 a{color:var(--maroon-deep)}
+.card .badge{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--blue);border-radius:999px;padding:4px 11px;white-space:nowrap}
+.card p{color:var(--dim);font-size:.92rem}
+.card .foot{font-size:.74rem;color:var(--faint);font-family:var(--mono);border-top:1px dashed var(--line);padding-top:10px}
+.num{color:var(--maroon-deep);font-weight:600}
+section .sub{color:var(--faint);font-size:.95rem;font-style:italic;font-family:var(--serif);margin-top:-30px}
+/* research */
+.rsr{margin-bottom:28px;padding:30px 34px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}
+.rsr.feature{background:var(--maroon-deep);color:var(--lumber);border:0;background-image:radial-gradient(ellipse 50% 70% at 100% 0%,rgba(220,151,165,.35),transparent 70%)}
+.rsr .tag{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-deep);font-weight:700}
+.rsr.feature .tag{color:var(--pink)}
+.rsr h3{margin:8px 0 12px;font-size:1.6rem}
+.rsr.feature h3{color:#fff}
+.rsr p{color:var(--dim);font-size:.96rem;line-height:1.7}
+.rsr.feature p{color:var(--lumber)}
+.rsr.feature .num{color:#fff}
+.rsr .pull{margin-top:18px;font-family:var(--serif);font-size:1.12rem;font-style:italic;color:var(--choc-deep);position:relative;padding-left:40px}
+.rsr .pull::before{content:"C";position:absolute;left:0;top:-14px;font-size:3.6rem;line-height:1;color:var(--pink);font-style:normal}
+.rsr.feature .pull{color:#fff}
+.rsr .sitelink{margin-top:14px;font-weight:600}
+/* skills chips */
+.skills{grid-template-columns:170px 1fr;gap:18px 24px}
+.skills dt{font-family:var(--serif);font-size:1.1rem;color:var(--maroon-deep);padding-top:2px}
+.skills dd{display:flex;flex-wrap:wrap;gap:8px;color:var(--dim);font-size:.93rem;line-height:1.4}
+.chip{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--choc-deep);font-size:.86rem}
+section:nth-of-type(even) .chip{background:var(--cream)}
+/* education */
+.edu .card h3{font-family:var(--serif);font-size:1.2rem}
+.edu .card p{color:var(--dim)}
+/* footer */
+footer{background:var(--choc-deep);color:var(--lumber);padding:96px 0 72px;position:relative;overflow:hidden;
+  background-image:radial-gradient(ellipse 50% 70% at 10% 100%,rgba(184,53,86,.4),transparent 70%)}
+footer .cta{font-family:var(--serif);font-weight:400;font-size:2.4rem;color:#fff;margin-bottom:14px;letter-spacing:-.01em}
+footer .sub{color:var(--lumber);opacity:.85;margin-bottom:32px}
+.btn{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:14px 28px;border-radius:999px;border:1px solid var(--pink);color:var(--pink)}
+.btn.primary{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.btn:hover{text-decoration:none;background:var(--pink);border-color:var(--pink);color:var(--choc-deep)}
+footer .fine{margin-top:48px;color:var(--pink);opacity:.8;font-size:.76rem}
+@media(max-width:600px){
+  header{padding-top:72px}
+  header .mark{display:none}
+  .job{margin-left:22px;padding:22px}
+  .job::before{left:-22px}.job::after{left:-28px}
+  .job .when{white-space:normal;display:inline-block;line-height:1.4}
+  .skills{grid-template-columns:1fr}
+  .rsr{padding:22px}
+  .marquee span{letter-spacing:.14em}
+  h2{font-size:1.9rem}
+  h2 .idx{font-size:5.5rem}
+  footer .cta{font-size:1.7rem}
+}
 
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:40px}
-  .stat{background:var(--card);padding:18px 14px}
-  .stat b{display:block;font-size:1.4rem;font-family:var(--mono);color:var(--text);font-weight:600;white-space:nowrap}
-  .stat b.sm{font-size:.95rem;line-height:2.1}
-  .stat i{font-style:normal;color:var(--faint);font-size:.76rem;letter-spacing:.05em}
-  .stat b em{font-style:normal;color:var(--acc);font-size:1rem}
-  @media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+/* recruiter mode: CSS-only toggle, no JavaScript; the same plain layout is used when printing */
+.rm-box{position:fixed;top:0;right:0;opacity:0;width:1px;height:1px}
+.rm-switch{position:fixed;top:10px;right:16px;z-index:20;display:flex;align-items:center;gap:8px;height:30px;padding:0 12px;border:1px solid var(--line);border-radius:15px;background:var(--lumber);color:var(--choc-deep);font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1;white-space:nowrap;cursor:pointer;user-select:none;box-shadow:0 2px 8px rgba(74,47,39,.18)}
+.rm-track{flex:none;position:relative;width:34px;height:18px;border-radius:9px;background:var(--pink);transition:background .15s}
+.rm-track::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.35);transition:left .15s}
+.rm-box:checked+.rm-switch .rm-track{background:var(--maroon)}
+.rm-box:checked+.rm-switch .rm-track::after{left:18px}
+.rm-box:focus-visible+.rm-switch{outline:2px solid var(--blue);outline-offset:2px}
+nav .wrap{padding-right:190px}
 
-  .principle{border-left:3px solid var(--acc);background:var(--bg2);padding:16px 20px;border-radius:0 8px 8px 0;color:var(--dim);font-size:.98rem;margin-top:36px}
-  .principle q{color:var(--text);font-style:italic}
+body:has(#rm:checked),body:has(#rm:checked) :not(.rm-switch,.rm-switch *){color:#000!important;background:#fff!important;background-image:none!important;box-shadow:none!important;text-shadow:none!important;transform:none!important;font-family:Georgia,"Times New Roman",serif!important;letter-spacing:0!important;text-transform:none!important;border-color:#000!important;opacity:1!important;font-style:normal!important}
+body:has(#rm:checked){font-size:15px;line-height:1.5}
+body:has(#rm:checked) .wrap{max-width:760px}
+body:has(#rm:checked) header{padding:28px 0 14px;overflow:visible}
+body:has(#rm:checked) header h1::after,body:has(#rm:checked) h2::after,body:has(#rm:checked) .job::before,body:has(#rm:checked) .job::after,body:has(#rm:checked) .card::before,body:has(#rm:checked) .rsr .pull::before,body:has(#rm:checked) nav .brand::before,body:has(#rm:checked) .marquee span::after,body:has(#rm:checked) .meta span::before,body:has(#rm:checked) nav a::after{display:none!important;content:none!important}
+body:has(#rm:checked) .marquee,body:has(#rm:checked) .mark,body:has(#rm:checked) h2 .idx,body:has(#rm:checked) .kicker,body:has(#rm:checked) nav,body:has(#rm:checked) .switch,body:has(#rm:checked) .rsr .tag{display:none!important}
+body:has(#rm:checked) section{padding:18px 0;border-top:1px solid #000}
+body:has(#rm:checked) h1{font-size:1.8rem;max-width:none;line-height:1.2}
+body:has(#rm:checked) h2{font-size:1.1rem;font-weight:700;margin-bottom:10px;padding-top:0}
+body:has(#rm:checked) h3{font-size:1rem}
+body:has(#rm:checked) .tagline{margin:10px 0 12px;max-width:none;font-size:1rem;line-height:1.5}
+body:has(#rm:checked) .meta,body:has(#rm:checked) .meta span,body:has(#rm:checked) .grid,body:has(#rm:checked) .stats,body:has(#rm:checked) .stat,body:has(#rm:checked) .edu,body:has(#rm:checked) .skills,body:has(#rm:checked) .skills dd,body:has(#rm:checked) .card,body:has(#rm:checked) .card .top,body:has(#rm:checked) .btns,body:has(#rm:checked) .dl{display:block}
+body:has(#rm:checked) .meta span{border:0!important;padding:0;margin:0 0 2px}
+body:has(#rm:checked) .card,body:has(#rm:checked) .job,body:has(#rm:checked) .rsr,body:has(#rm:checked) .stats,body:has(#rm:checked) .stat,body:has(#rm:checked) .principle,body:has(#rm:checked) .btn,body:has(#rm:checked) .badge,body:has(#rm:checked) .minor,body:has(#rm:checked) .skills,body:has(#rm:checked) .chip,body:has(#rm:checked) .when,body:has(#rm:checked) .card .foot{border:0!important;border-radius:0!important;padding:0!important;margin-left:0!important;margin-right:0!important}
+body:has(#rm:checked) .stats{margin-top:14px}
+body:has(#rm:checked) .stat{margin-bottom:3px;overflow:visible}
+body:has(#rm:checked) .stat::before{display:none!important}
+body:has(#rm:checked) .stat b{display:inline!important;font-size:1rem!important;line-height:inherit!important;margin:0 6px 0 0!important;font-weight:700}
+body:has(#rm:checked) .stat i{display:inline!important;font-size:1rem!important;margin:0!important}
+body:has(#rm:checked) .principle{margin-top:14px;text-align:left;font-size:1rem}
+body:has(#rm:checked) .card,body:has(#rm:checked) .job,body:has(#rm:checked) .rsr{margin-bottom:14px}
+body:has(#rm:checked) .job .head{display:block}
+body:has(#rm:checked) .job h3 .rolename{font-size:1rem}
+body:has(#rm:checked) .job li{padding-left:16px;font-size:1rem}
+body:has(#rm:checked) .job li::before{content:"\2013"!important;display:inline!important;width:auto!important;height:auto!important;background:none!important;outline:0!important;border-radius:0!important;top:0!important}
+body:has(#rm:checked) .when{display:inline;font-size:.9rem;font-weight:400}
+body:has(#rm:checked) .badge{display:inline;font-size:.85rem}
+body:has(#rm:checked) .card h3,body:has(#rm:checked) .rsr h3{font-size:1rem;margin:0 0 4px}
+body:has(#rm:checked) .card p,body:has(#rm:checked) .rsr p{font-size:1rem}
+body:has(#rm:checked) .skills dt{font-weight:700;margin-top:6px;font-size:1rem}
+body:has(#rm:checked) .chip{display:inline;font-size:1rem}
+body:has(#rm:checked) .chip:not(:last-child)::after{content:", "}
+body:has(#rm:checked) .pull{padding-left:0;font-size:1rem}
+body:has(#rm:checked) a{text-decoration:underline}
+body:has(#rm:checked) a[href^="http"]::after{content:" <" attr(href) ">";font-size:.85em;word-break:break-all}
+body:has(#rm:checked) .meta a::after{content:none}
+body:has(#rm:checked) footer{text-align:left;padding:18px 0 40px;border-top:1px solid #000;overflow:visible}
+body:has(#rm:checked) .btn{display:inline;margin:0 14px 0 0;font-size:1rem}
+body:has(#rm:checked) .minor{margin-left:0}
+body:has(#rm:checked) .refs{margin-top:4px}
+body:has(#rm:checked) footer .cta{font-size:1.2rem;font-weight:700;margin-bottom:6px}
+body:has(#rm:checked) footer .sub{opacity:1;margin-bottom:10px}
 
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media(max-width:720px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s;box-shadow:0 1px 3px rgba(16,24,40,.05)}
-  .card:hover{border-color:var(--acc)}
-  .card .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-  .card h3{font-family:var(--mono);font-size:1rem;color:var(--acc2)}
-  .card .badge{font-family:var(--mono);font-size:.72rem;color:var(--acc);white-space:nowrap;border:1px solid var(--line);border-radius:20px;padding:2px 10px}
-  .card p{color:var(--dim);font-size:.92rem;flex:1}
-  .card .foot{font-family:var(--mono);font-size:.76rem;color:var(--faint)}
-  .card.wide{grid-column:1/-1}
+@page{size:A4;margin:16mm 15mm}
+@media print{
+nav,.rm-switch,.rm-box,.dl,.btn,footer .fine,.switch{display:none!important}
+.po{display:block!important}
+html{font-size:12.5px}
+li,.card,.stat,.head,h2,h3{break-inside:avoid}
+h2,h3,.head,.role,.skills dt{break-after:avoid}
+.wrap{max-width:none!important;padding:0!important}
+body{font-size:12.5px!important;line-height:1.4!important}
+header{padding:0 0 10px!important}
+section{padding:12px 0!important}
+footer{padding:12px 0 0!important}
+.job{margin-top:16px!important}
+.job li{margin-bottom:5px!important}
+.card,.feature,.rsr{margin-bottom:9px!important}
 
-  .job .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px;margin-bottom:6px}
-  .job .when{font-family:var(--mono);color:var(--faint);font-size:.82rem}
-  .job .role{color:var(--dim);font-size:.95rem;margin-bottom:14px}
-  .job ul{list-style:none;margin:0 0 8px}
-  .job li{padding-left:20px;position:relative;color:var(--dim);font-size:.95rem;margin-bottom:10px}
-  .job li::before{content:"–";position:absolute;left:0;color:var(--acc)}
-  .job li b{color:var(--text);font-weight:600}
-  .minor{color:var(--faint);font-size:.9rem;margin-top:22px;border-top:1px dashed var(--line);padding-top:16px}
+body,body :not(.rm-switch,.rm-switch *){color:#000!important;background:#fff!important;background-image:none!important;box-shadow:none!important;text-shadow:none!important;transform:none!important;font-family:Georgia,"Times New Roman",serif!important;letter-spacing:0!important;text-transform:none!important;border-color:#000!important;opacity:1!important;font-style:normal!important}
+body{font-size:15px;line-height:1.5}
+body .wrap{max-width:760px}
+body header{padding:28px 0 14px;overflow:visible}
+body header h1::after,body h2::after,body .job::before,body .job::after,body .card::before,body .rsr .pull::before,body nav .brand::before,body .marquee span::after,body .meta span::before,body nav a::after{display:none!important;content:none!important}
+body .marquee,body .mark,body h2 .idx,body .kicker,body nav,body .switch,body .rsr .tag{display:none!important}
+body section{padding:18px 0;border-top:1px solid #000}
+body h1{font-size:1.8rem;max-width:none;line-height:1.2}
+body h2{font-size:1.1rem;font-weight:700;margin-bottom:10px;padding-top:0}
+body h3{font-size:1rem}
+body .tagline{margin:10px 0 12px;max-width:none;font-size:1rem;line-height:1.5}
+body .meta,body .meta span,body .grid,body .stats,body .stat,body .edu,body .skills,body .skills dd,body .card,body .card .top,body .btns,body .dl{display:block}
+body .meta span{border:0!important;padding:0;margin:0 0 2px}
+body .card,body .job,body .rsr,body .stats,body .stat,body .principle,body .btn,body .badge,body .minor,body .skills,body .chip,body .when,body .card .foot{border:0!important;border-radius:0!important;padding:0!important;margin-left:0!important;margin-right:0!important}
+body .stats{margin-top:14px}
+body .stat{margin-bottom:3px;overflow:visible}
+body .stat::before{display:none!important}
+body .stat b{display:inline!important;font-size:1rem!important;line-height:inherit!important;margin:0 6px 0 0!important;font-weight:700}
+body .stat i{display:inline!important;font-size:1rem!important;margin:0!important}
+body .principle{margin-top:14px;text-align:left;font-size:1rem}
+body .card,body .job,body .rsr{margin-bottom:14px}
+body .job .head{display:block}
+body .job h3 .rolename{font-size:1rem}
+body .job li{padding-left:16px;font-size:1rem}
+body .job li::before{content:"\2013"!important;display:inline!important;width:auto!important;height:auto!important;background:none!important;outline:0!important;border-radius:0!important;top:0!important}
+body .when{display:inline;font-size:.9rem;font-weight:400}
+body .badge{display:inline;font-size:.85rem}
+body .card h3,body .rsr h3{font-size:1rem;margin:0 0 4px}
+body .card p,body .rsr p{font-size:1rem}
+body .skills dt{font-weight:700;margin-top:6px;font-size:1rem}
+body .chip{display:inline;font-size:1rem}
+body .chip:not(:last-child)::after{content:", "}
+body .pull{padding-left:0;font-size:1rem}
+body a{text-decoration:underline}
+body a[href^="http"]::after{content:" <" attr(href) ">";font-size:.85em;word-break:break-all}
+body .meta a::after{content:none}
+body footer{text-align:left;padding:18px 0 40px;border-top:1px solid #000;overflow:visible}
+body .btn{display:inline;margin:0 14px 0 0;font-size:1rem}
+body .minor{margin-left:0}
+body .refs{margin-top:4px}
+body footer .cta{font-size:1.2rem;font-weight:700;margin-bottom:6px}
+body footer .sub{opacity:1;margin-bottom:10px}
 
-  .rsr{margin-bottom:30px}
-  .rsr h3{margin-bottom:6px}
-  .rsr .tag{font-family:var(--mono);font-size:.72rem;color:var(--warn);letter-spacing:.08em;text-transform:uppercase}
-  .rsr p{color:var(--dim);font-size:.95rem;max-width:840px}
-  .rsr .num{color:var(--text);font-family:var(--mono);font-size:.88rem}
-  .feature .pull{color:var(--text);font-style:italic;margin-top:14px;font-size:.95rem}
-  .feature .sitelink{margin-top:14px;font-family:var(--mono);font-size:.85rem}
-
-  .skills{display:grid;grid-template-columns:150px 1fr;gap:12px 24px;font-size:.94rem}
-  @media(max-width:600px){.skills{grid-template-columns:1fr;gap:4px}}
-  .skills dt{font-family:var(--mono);color:var(--acc);font-size:.8rem;padding-top:2px}
-  .skills dd{color:var(--dim);margin-bottom:8px}
-
-  .edu{display:flex;flex-wrap:wrap;gap:18px}
-  .edu .card{flex:1;min-width:260px}
-  .edu .card p{flex:none}
-  footer{padding:56px 0 72px;border-top:1px solid var(--line);text-align:center}
-  footer .cta{font-size:1.3rem;font-weight:600;margin-bottom:10px}
-  footer .sub{color:var(--dim);margin-bottom:22px}
-  .btn{display:inline-block;font-family:var(--mono);font-size:.9rem;border:1px solid var(--acc);color:var(--acc);border-radius:8px;padding:10px 22px;margin:0 6px}
-  .btn:hover{background:var(--acc);color:var(--bg);text-decoration:none}
-  footer .fine{margin-top:34px;color:var(--faint);font-size:.78rem;font-family:var(--mono)}
-  nav{position:sticky;top:0;background:rgba(250,251,252,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-  nav .wrap{display:flex;gap:22px;padding-top:12px;padding-bottom:12px;font-family:var(--mono);font-size:.8rem;overflow-x:auto}
-  nav a{color:var(--dim);white-space:nowrap}
-  nav a:hover{color:var(--acc);text-decoration:none}
+}
 </style>
 </head>
 <body>
+<input type="checkbox" id="rm" class="rm-box" role="switch" aria-label="Recruiter mode: plain text layout"><label for="rm" class="rm-switch"><span>recruiter mode</span><span class="rm-track"></span></label>
 
 <nav><div class="wrap">
-  <a href="#experience">experience</a>
-  <a href="#open-source">open-source</a>
-  <a href="#research">research</a>
-  <a href="#skills">skills</a>
-  <a href="#contact">contact</a>
+  <span class="brand">Daniel S. E. Hill</span>
+  <a href="#experience">Experience</a>
+  <a href="#open-source">Open-source</a>
+  <a href="#research">Research</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
 </div></nav>
 
-<header class="wrap">
-  <div class="kicker">daniel@southampton:~$ whoami</div>
+<header><div class="wrap">
+  <div class="kicker">Analyst &amp; developer · finance, data &amp; economics</div>
   <h1>Daniel S. E. Hill</h1>
-  <p class="tagline">Analyst and developer across finance, data and economics. A-levels in Maths, Economics and Business, production systems for an FCA-regulated wealth manager, and trading infrastructure, storage engines and research hardware designs in Python, Rust and TypeScript. I publish the tests that prove they work.</p>
+  <p class="tagline">Analyst and developer across finance, data and operations. A-levels in Maths, Economics and Business; production systems for an FCA-regulated wealth manager; operations and supply-chain roles in transport; and trading infrastructure, storage engines and research hardware designs in Python, Rust and TypeScript. I publish the tests that prove they work.</p>
   <div class="meta">
     <span><a href="mailto:daniel.s.e.hill9@gmail.com">daniel.s.e.hill9@gmail.com</a></span>
     <span><a href="https://github.com/d-Trading165" rel="me">github.com/d-Trading165</a></span>
+    <span class="po"><a href="https://daniel-hill-portfolio.pages.dev">daniel-hill-portfolio.pages.dev</a></span>
     <span>Southampton, UK · full right to work</span>
   </div>
-
+  <p class="dl"><a class="btn" href="/Daniel-Hill-CV.pdf" download>Download PDF</a></p>
+  <span class="mark" aria-hidden="true">DH</span>
   <div class="stats">
-    <div class="stat"><b>12</b><i>public repos, MIT + CI</i></div>
-    <div class="stat"><b>840</b><i>CI-verified tests across them</i></div>
+    <div class="stat"><b>45%</b><i>cost saving from a trade-routing plan I proposed</i></div>
+    <div class="stat"><b>13</b><i>vehicle fleet managed, with its drivers</i></div>
+    <div class="stat"><b>0</b><i>data lost migrating a live revenue SaaS, as sole developer</i></div>
+    <div class="stat"><b>5</b><i>advisory platforms unified into one operations hub</i></div>
+    <div class="stat"><b>100</b><i>Lighthouse accessibility score on a regulated-firm site</i></div>
     <div class="stat"><b>24,291</b><i>auction lots backtested, +£820 realised</i></div>
-    <div class="stat"><b>3</b><i>systems released and in active use, incl. a revenue SaaS</i></div>
-    <div class="stat"><b>500k<em>+</em></b><i>LOC private research code</i></div>
+    <div class="stat"><b>14</b><i>wallet betting cluster traced to one funding source</i></div>
     <div class="stat"><b class="sm">GB2603303.5</b><i>UKIPO patent application filed</i></div>
-    <div class="stat"><b>4</b><i>US-gov FOIA responses received</i></div>
   </div>
-
-  <div class="principle">
-    Working rule: <q>everything that can be shown is linked, and a backtest you haven't tried to break is a rumour.</q> Test counts are enforced by GitHub Actions on every push, not asserted.
-  </div>
-</header>
-
-<section id="experience"><div class="wrap">
-  <h2><span class="idx">01</span>Experience</h2>
-
-  <div class="job">
-    <div class="head"><h3>Regis Bentley · Junior Analyst / Software Developer (Intern)</h3><span class="when">Jul 2026 – present · Southampton</span></div>
+  <div class="principle">Working rule: <q>everything that can be shown is linked, and a backtest you haven't tried to break is a rumour.</q> Test counts are enforced by GitHub Actions on every push, not asserted.</div>
+</div></header>
+<div class="marquee" aria-hidden="true"><div class="track"><span>Finance</span><span>Data</span><span>Operations</span><span>Python</span><span>Rust</span><span>TypeScript</span><span>SQL</span><span>FCA-regulated production</span><span>Backtesting</span><span>Logistics</span><span>Row-level security</span><span>Econometrics</span><span>Supply chain</span><span>CI-verified tests</span><span>Finance</span><span>Data</span><span>Operations</span><span>Python</span><span>Rust</span><span>TypeScript</span><span>SQL</span><span>FCA-regulated production</span><span>Backtesting</span><span>Logistics</span><span>Row-level security</span><span>Econometrics</span><span>Supply chain</span><span>CI-verified tests</span></div></div>
+<section id="experience"><div class="wrap"><h2><span class="idx">01</span>Experience</h2>
+  <article class="job">
+    <div class="head"><h3>Regis Bentley <span class="sep">·</span> <span class="rolename">Junior Analyst / Software Developer (Intern)</span></h3><span class="when">Jul 2026 – present · Southampton</span></div>
     <p class="role">Sole developer on production systems for an FCA-regulated wealth-management firm.</p>
     <ul>
       <li><b>Migrated, hardened and extended a live multi-tenant compliance SaaS</b> for UK financial-advice firms: React/TypeScript (~45k LOC), Supabase Postgres with row-level security, 34 Deno edge functions, live Stripe billing. Led its move off a low-code host onto standalone infrastructure with a zero-data-loss production cutover against a 49-migration schema, live since Aug 2026. Sole developer, 54/54 commits.</li>
       <li><b>Enforced tenant isolation across ~50 RLS-scoped tables</b> with an automated harness that provisions throwaway tenants and asserts cross-tenant reads and writes fail. The harness caught a repo-wide missing-GRANT regression that row-level security alone had masked.</li>
       <li><b>Introduced CI to a codebase that had none</b>; escalated typecheck and test suites to hard merge gates after a stale type shipped undetected; grew coverage to 180+ automated tests across frontend and edge functions, including prompt-injection and cross-tenant isolation cases.</li>
-      <li><b>Built AI document-extraction with per-field provenance</b>, citations and confidence scoring, behind mandatory human adjudication. Uploaded documents are treated as untrusted model input.</li>
+      <li><b>Built AI document-extraction with per-field provenance</b>, citations and confidence scoring, replacing a fully manual process, behind mandatory human adjudication. Uploaded documents are treated as untrusted model input.</li>
       <li><b>Built an operations-automation hub in TypeScript</b> unifying client data across five advisory platforms. Money is handled only as integer pence; language models are confined to a single drafting seam and never permitted to transcribe or compute a figure. ~3k LOC of source against ~2.6k LOC of tests, all vendor HTTP mocked at an injectable seam.</li>
       <li><b>Encoded FCA financial-promotion rules as build failures</b> rather than a review checklist, and delivered a scroll-driven marketing site (Astro + GSAP) with Lighthouse accessibility 100, best-practices 96, CLS 0.001, enforced by a ~1k-LOC Playwright, axe-core and Lighthouse toolchain.</li>
-      <li><b>Wrote a self-hosted MCP media server</b> (Python) replacing a paid third-party service, with request-ID journalling so long-running jobs survive client timeouts.</li>
+      <li><b>Wrote a self-hosted MCP media server</b> (Python) replacing a paid third-party service costing £200 a month, with request-ID journalling so long-running jobs survive client timeouts.</li>
     </ul>
-  </div>
-
-  <div class="job" style="margin-top:34px">
-    <div class="head"><h3>Soul Apartments · Real Estate Management (Intern)</h3><span class="when">Jun – Sep 2025 · Southampton</span></div>
+  </article>
+  <article class="job">
+    <div class="head"><h3>VABE Transport Ltd <span class="sep">·</span> <span class="rolename">Junior Logistics Analyst</span></h3><span class="when">Jan 2026 – present</span></div>
+    <p class="role">Analyst covering the movement of goods from supplier to delivery for a transport company shipping internationally: the flow itself, the storage and stock behind it, and the partners and budgets it depends on.</p>
+    <ul>
+      <li><b>End-to-end flow management</b>: orders have to meet service-level agreements from inbound container shipping and goods receipt through storage, fulfilment and final dispatch. Planned daily workloads and staffing against those targets, and reduced the small number of orders that had been falling short.</li>
+      <li><b>Inventory and storage oversight</b>: kept stock records accurate in the inventory management system and ran stock audits. Assisted the reorganisation of the storage layout, which gave a 12% capacity gain, then proposed upgrading the racking to use the full ceiling height and assisted with the upgrade, which gave a further 30%.</li>
+      <li><b>Partner and budget management</b>: managed third-party logistics providers and monitored their performance against KPIs, and managed the logistics budget.</li>
+      <li><b>Moving towards strategy</b>: proposed an international routing plan built on free-trade-agreement origin rules and tariff-rate-quota timing, which led to a 45% cost saving once senior management approved and implemented it.</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="head"><h3>Advantage Removals Ltd <span class="sep">·</span> <span class="rolename">Transport Manager</span></h3><span class="when">Feb 2025 – Jan 2026</span></div>
+    <p class="role">Ran transport for a removals and courier company operating 13 vehicles: compliance, the fleet, its drivers and daily jobs.</p>
+    <ul>
+      <li><b>Legal and safety compliance</b>: kept vehicle tax, MOT and insurance records current across the fleet and monitored driver hours against working-time rules. Investigated infringements, then organised driver workshops and tightened how data was recorded and reviewed, after which infringements fell.</li>
+      <li><b>Fleet and driver management</b>: a 13-vehicle fleet of 10 vans and 3 light trucks, all under 3.5 tonnes. Oversaw daily walk-around checks and defect reporting, scheduled preventative maintenance with workshops, and managed the drivers' rota, performance reviews and disciplinary matters.</li>
+      <li><b>Operational execution</b>: planned daily routes and schedules to deliver on time and in full, tracked cost, safety and vehicle-utilisation KPIs, and managed suppliers such as workshops and tyre providers.</li>
+      <li><b>Designed and built an automated operations platform in Python</b>: driver roles, crews, transport and accounting were all run by manual admin, so built a system that automated them. It also works as a middle layer for existing removals and courier firms to operate, find jobs and collect reviews, recording customer and partner data throughout, and is used by 4 partner firms.</li>
+      <li><b>Customer service and general administration</b>: set up 24-hour live chat and AI phone lines, which sharply cut the number of requests reaching human operators, and an audit trail that supports complaint handling.</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="head"><h3>Soul Apartments <span class="sep">·</span> <span class="rolename">Real Estate Management (Intern)</span></h3><span class="when">Jun – Sep 2025 · Skopje, North Macedonia</span></div>
     <p class="role">Day-to-day operations for short-let (Airbnb-style) serviced apartments.</p>
     <ul>
-      <li><b>Guest operations end to end</b>: enquiries, booking confirmations, check-in coordination and checkout, with same-day resolution of issues raised mid-stay.</li>
+      <li><b>Guest operations end to end</b> across 5 apartments, all rated 4–5 stars: enquiries, booking confirmations, check-in coordination and checkout, with same-day resolution of issues raised mid-stay.</li>
       <li><b>Turnover management between stays</b>: scheduling cleaning and linen changes against the booking calendar, inspecting units to listing standard, and logging maintenance faults for contractor follow-up.</li>
       <li><b>Listing and calendar upkeep</b> across booking platforms: availability management, pricing updates as directed, and guest-review responses.</li>
     </ul>
-  </div>
-
-  <div class="job" style="margin-top:34px">
-    <div class="head"><h3>Sutton Trust &amp; Deutsche Bank · Pathways to Banking &amp; Finance</h3><span class="when">2024 – 26 · London</span></div>
+  </article>
+  <article class="job">
+    <div class="head"><h3>Sutton Trust &amp; Deutsche Bank <span class="sep">·</span> <span class="rolename">Pathways to Banking &amp; Finance</span></h3><span class="when">2024 – 26 · London</span></div>
     <p class="role">Completed the Sutton Trust's 18-month programme for Year 12 students studying A-level Mathematics, run with Deutsche Bank as founding corporate partner.</p>
     <ul>
       <li><b>Work-experience placement at Deutsche Bank's London office</b>: shadowing staff across divisions, workshops on CV writing, interviewing and personal brand, and a Q&amp;A panel with recent graduate hires.</li>
       <li><b>Employer insight events and skills workshops</b> through the programme: presenting, negotiating and networking, plus a mock assessment centre and application support.</li>
       <li><b>University taster lectures</b> in economics and finance, with mentoring from current finance undergraduates.</li>
     </ul>
-  </div>
-
-  <p class="minor">Earlier: The White Swan, bartender (2024–25) · Jesters, front of house (2025–26). Since 2022: freelance construction &amp; renovation, and a self-funded independent clothing brand run end-to-end.</p>
+  </article>
+  <p class="minor">The VABE and Advantage roles were held alongside A-levels, with hours agreed with my manager; the Advantage role continued remotely over summer 2025, with a colleague covering in-person duties.</p>
+  <p class="minor refs">References available on request.</p>
 </div></section>
-
-<section id="open-source"><div class="wrap">
-  <h2><span class="idx">02</span>Open-source portfolio</h2>
+<section id="open-source"><div class="wrap"><h2><span class="idx">02</span>Open-source portfolio</h2>
   <div class="grid">
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/execution-engine">execution-engine</a></h3><span class="badge">165 tests · CI</span></div>
       <p>Broker-agnostic trade execution layer: signal validation chain, pre-trade risk gateway with registerable checks, order/fill/position lifecycle, a seeded simulated broker, and a three-state outcome-level circuit breaker with drawdown-scaled position sizing. Contains no strategy by construction: signals arrive as injected objects, so the engine can be tested without one.</p>
       <div class="foot">Python · 4.4k LOC · pure stdlib</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/gateway-rotator">gateway-rotator</a></h3><span class="badge">66 tests · CI</span></div>
       <p>LLM provider failover: same model, same history, next provider when one fails. Per-gateway circuit breakers with exponential cooldown, an error taxonomy separating gateway-level from model-level failures, SSE stream-restart semantics, and an OpenAI-compatible proxy. Adding a provider is one YAML entry.</p>
       <div class="foot">Python · library + CLI + proxy · offline test suite · 22-provider working config</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/tiered-storage-engine">tiered-storage-engine</a></h3><span class="badge">91 tests · CI</span></div>
       <p>Hot/warm/cold object store with per-payload codec selection and a FastAPI control plane. Benchmarked with the causes written up, including a 288&times; store/retrieve asymmetry traced to triple compression in auto mode. The Rust core ships as source, documented as never compiled; no claim is made for it.</p>
       <div class="foot">Python + Rust · benchmarks committed</div>
     </div>
-
-    <div class="card">
-      <div class="top"><h3><a href="https://github.com/d-Trading165/tinker-calendar">tinker-calendar</a></h3><span class="badge">convergence tests · CI</span></div>
-      <p>A Tkinter desktop app and a dependency-free offline-first PWA writing one dataset with no server between them. Devices converge through per-item last-write-wins merging and deletion tombstones; the merge is order-independent and idempotent, and the tests prove it.</p>
-      <div class="foot">Python + vanilla JS · stdlib-only hot path · deployed on Cloudflare Pages</div>
-    </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/py-complexity-radar">py-complexity-radar</a></h3><span class="badge">60 tests · CI</span></div>
       <p>Dependency-free AST-based cyclomatic complexity analyser: per-function scoring, risk banding, JSON/Markdown reports, and trend tracking so complexity drift is visible across runs. Documents exactly where it deviates from strict McCabe, and ships an analysis of its own source as the worked example.</p>
       <div class="foot">Python · zero runtime dependencies · CI ratchet flag for pipelines</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/resilient-pipeline">resilient-pipeline</a></h3><span class="badge">58 tests · CI</span></div>
       <p>Data standardization plus a four-tier degradation ladder: retry, then a fallback calculation, then a simplified operation, then an emergency default. Fallbacks are domain code registered per operation type. Includes quality scoring and an IQR outlier budget that rejects bad data rather than silently repairing it.</p>
       <div class="foot">Python · extracted from the private trading-research system</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/ohlc-volatility">ohlc-volatility</a></h3><span class="badge">23 tests · CI</span></div>
       <p>Runs the range-based volatility estimators (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang) side by side so the numbers can disagree visibly. Adds adaptive Bollinger, ATR and Keltner analysis, and diagnostics for when GARCH-family models are, and are not, appropriate. A 215-method suite.</p>
       <div class="foot">Python · NumPy core, SciPy imported lazily · property-based tests</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/quant-stat-lab">quant-stat-lab</a></h3><span class="badge">12 tests · CI</span></div>
       <p>Advanced statistics for noisy series: L-moments, robust statistics, bootstrap analysis, extreme-value analysis, nonparametric tests, and a Bayesian block: conjugate posteriors, change-point detection, Bayes-factor model comparison, and posterior predictive checks.</p>
       <div class="foot">Python + SciPy · validate-then-calculate contract throughout</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/autonomous-math-lab">autonomous-math-lab</a></h3><span class="badge">132 tests · CI</span></div>
       <p>An autonomous mathematics research engine. Seven pluggable modules (Collatz, Goldbach, prime distribution, graph theory, symbolic regression, cellular automata, dynamical systems) run under expected-value task scheduling with psutil-enforced compute budgets. An <span class="num">independent verification engine re-derives findings</span> rather than trusting the module that produced them. Ran unattended for 3 days / 107 research cycles.</p>
       <div class="foot">Python · ~28k LOC · SQLite/PostgreSQL/MongoDB persistence behind one interface</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/uif-physics">uif-physics</a></h3><span class="badge">81 tests · CI</span></div>
       <p>A binary-lattice physics laboratory: measured emergent inverse-square attraction (exponent <span class="num">2.09</span>), mass proportionality <span class="num">r = 0.891</span>, FFT-accelerated long-range solves, a ring-decomposed retarded potential (causality at one cell per tick, static-grid equivalence to 1e-14), and a THEORY_CONFLICTS.md recording where the results contradict the theory.</p>
       <div class="foot">Python · NumPy/SciPy · ~31k LOC · checkpoint/replay + plugin layer</div>
     </div>
-
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/regime-lab">regime-lab</a></h3><span class="badge">97 tests · CI</span></div>
       <p>From-scratch two-state Gaussian HMM, a strictly walk-forward regime gate with bit-exact no-lookahead tests, and a Politis–Romano stationary bootstrap for Sharpe confidence intervals. Ships the negative result it was built to find: every gated variant underperformed the ungated strategy (<span class="num">+0.33 vs +0.21/+0.20/+0.24</span>).</p>
       <div class="foot">Python · NumPy-only · arrays in, arrays out</div>
     </div>
-
     <div class="card wide">
       <div class="top"><h3><a href="https://github.com/d-Trading165/struct-log-alert">struct-log-alert</a></h3><span class="badge">45 tests · CI</span></div>
       <p>Stdlib-only structured logging with correlation-ID propagation, plus a severity-ranked alert manager with acknowledgment, rate limiting and injectable delivery senders (no network I/O by default). Publishing it fixed an inherited bug the suite caught: severity comparison by enum string meant "error" &lt; "info", silently dropping ERROR alerts.</p>
       <div class="foot">Python · zero runtime dependencies</div>
     </div>
-
   </div>
-
   <p class="minor">The public record doubles as process evidence: uif-physics' retarded potential was implemented to a pre-existing failing test specification; regime-lab publishes the negative result it was built to find; both CI failures to date (a NumPy 2.0 incompatibility, a pytest collection fault) were diagnosed and fixed the same day; and repairs made during extraction, including an inherited severity-comparison bug, are documented in commit messages rather than hidden.</p>
 </div></section>
-
-<section id="research"><div class="wrap">
-  <h2><span class="idx">03</span>Independent research &amp; systems</h2>
-  <p style="color:var(--faint);margin:-16px 0 26px;font-size:.9rem">Private code; methods and results discussed freely in interview.</p>
-
+<section id="research"><div class="wrap"><h2><span class="idx">03</span>Independent research &amp; systems</h2>
+  <p class="sub">Private code; methods and results discussed freely in interview.</p>
   <div class="rsr feature">
     <span class="tag">featured · data integrity</span>
     <h3>Auction mispricing scanner</h3>
     <p>Harvests auction sitemaps (~150k lots), extracts metal, purity and weight from lot titles and condition reports, and prices against live spot with FX conversion. Backtested over 40 closed auctions covering <span class="num">24,291 lots: 4 verified wins, £1,635 deployed, +£820 realised (~50% blended return on deployed capital)</span>.</p>
     <p class="pull">The number I'm prouder of is the one before it: the first backtest reported 62 wins and £18k of profit, all of it phantom. I traced 16 root causes, encoded each as a domain rule, and locked them behind 36 regression tests.</p>
   </div>
-
   <div class="rsr feature">
     <span class="tag">featured · research hardware</span>
     <h3>Neuromorphic computing system: "InteI" (formerly Dual ML)</h3>
     <p>An analogue "artificial subconscious": neuromodulator circuit models (dopamine, serotonin, noradrenaline, acetylcholine), Kuramoto oscillator banks, and physical-substrate simulation: ionic diffusion validated against Fick's law, surface-acoustic-wave propagation, and phase-shifting interferometry with tomographic 3D reconstruction. <span class="num">~43k LOC, 325 tests, 15 LTSpice schematics</span>, embedded C++ firmware, and a costed BOM with production part numbers (STM32F407, Artix-7, ADS1256). UKIPO patent application <span class="num">GB2603303.5</span> filed Feb 2026.</p>
     <p class="pull">After two years I audited my own timescale assumptions from first principles and found order-of-magnitude errors; the ionic chamber responds in hours, not milliseconds. I froze v1 and restarted behind a falsify-first gate: the cheapest disproving experiment runs before any build spend.</p>
-    <p class="sitelink">→ <a href="https://d-trading165.github.io/Dual-ML-Proposal/">Interactive proposal site</a>: in-browser substrate simulations and a 3D hardware viewer</p>
   </div>
-
   <div class="rsr">
     <span class="tag">trading systems</span>
     <h3>Systematic trading research platform</h3>
     <p>Strategies feed a central executor through a pre-trade risk gateway and circuit breaker, over a 19-module, ~25k-LOC indicator library backed by 500+ unit tests: a <span class="num">215-method volatility suite</span> (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang), Bayesian change-point detection, and microstructure and order-flow analytics. Forward-test plumbing verified against an Interactive Brokers paper account (full order-lifecycle round-trip; <span class="num">59,650 bars archived</span>). A walk-forward HMM regime gate was rejected on its own evidence: 239 trades over 19 years failed to clear the bootstrap confidence bar, so it does not ship. Paper-trading only by construction. The volatility, statistics and regime-gating layers are published above as ohlc-volatility, quant-stat-lab and regime-lab; the strategy layer stays private.</p>
   </div>
-
   <div class="rsr">
     <span class="tag">machine vision</span>
     <h3>Image-analysis network stack</h3>
     <p>A six-level stacked vision architecture for noisy visual input, from an L1 reflex layer (gradient fields, salience maps, per-region uncertainty) up through higher-level structural nets. A dedicated uncertainty module handles noise models, evidence accumulation and attention-energy allocation, with entropy-based filtering in the mid levels. <span class="num">~24k LOC</span>; the self-supervised L1 trained to <span class="num">0.061 validation loss</span>. Built to read rendered web pages as images, where classical parsing fails.</p>
   </div>
-
   <div class="rsr">
     <span class="tag">osint / filings</span>
     <h3>Market-structure research</h3>
-    <p>A congressional-disclosure system over public insider-trade filings, including <span class="num">four answered Office of Government Ethics FOIA requests</span>, a 28-table research database, and primary-source contradiction analysis between filed disclosures and agency responses. Separately: on-chain analysis that scored 2,000 prediction markets on eight heuristics and traced a <span class="num">14-wallet coordinated betting cluster</span> through Gnosis Safe multisigs to a single funding origin across a 631-node wallet graph.</p>
+    <p>An influence-mapping system built from US public records: a graph of <span class="num">1,149 entities, 1,066 documented connections and 1,072 money flows</span> linking members of Congress, lobbying firms and nonprofits, with an evidence URL and confidence rating on every connection. A weekly pipeline over more than a dozen official bulk sources has parsed <span class="num">26,047 House stock-trade disclosures</span> from 1,400+ periodic transaction reports (paper filings read by OCR) and 376 full nonprofit tax returns, on ~25k LOC of Python with 96 tests. Includes <span class="num">four answered Office of Government Ethics FOIA requests</span>, a 28-table research database, and primary-source contradiction analysis between filed disclosures and agency responses. Separately: on-chain analysis that scored 2,000 prediction markets on eight heuristics and traced a <span class="num">14-wallet coordinated betting cluster</span> through Gnosis Safe multisigs to a single funding origin across a 631-node wallet graph.</p>
   </div>
-
 </div></section>
-
-<section id="skills"><div class="wrap">
-  <h2><span class="idx">04</span>Technical skills</h2>
+<section id="skills"><div class="wrap"><h2><span class="idx">04</span>Technical skills</h2>
   <dl class="skills">
-    <dt>languages</dt><dd>Python, Rust, TypeScript/JavaScript, SQL</dd>
-    <dt>quantitative</dt><dd>Econometrics, market microstructure, volatility &amp; momentum modelling, VaR/CVaR, Sharpe/Sortino/Calmar, walk-forward and Monte Carlo validation, bootstrap confidence intervals, HMM regime modelling</dd>
-    <dt>data &amp; ml</dt><dd>pandas, NumPy, scikit-learn, time-series analysis, Bayesian inference, anomaly detection, feature engineering on noisy and non-stationary data</dd>
-    <dt>backend</dt><dd>FastAPI, Postgres (row-level security), Supabase, Deno edge functions, REST design, Docker, GitHub Actions CI, pytest</dd>
-    <dt>frontend</dt><dd>React, Astro, PWAs/service workers, Playwright and axe-core testing</dd>
+    <dt>languages</dt><dd><span class="chip">Python</span><span class="chip">Rust</span><span class="chip">TypeScript/JavaScript</span><span class="chip">SQL</span></dd>
+    <dt>quantitative</dt><dd><span class="chip">Econometrics</span><span class="chip">market microstructure</span><span class="chip">volatility &amp; momentum modelling</span><span class="chip">VaR/CVaR</span><span class="chip">Sharpe/Sortino/Calmar</span><span class="chip">walk-forward and Monte Carlo validation</span><span class="chip">bootstrap confidence intervals</span><span class="chip">HMM regime modelling</span></dd>
+    <dt>data &amp; ml</dt><dd><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">scikit-learn</span><span class="chip">time-series analysis</span><span class="chip">Bayesian inference</span><span class="chip">anomaly detection</span><span class="chip">feature engineering on noisy and non-stationary data</span></dd>
+    <dt>backend</dt><dd><span class="chip">FastAPI</span><span class="chip">Postgres (row-level security)</span><span class="chip">Supabase</span><span class="chip">Deno edge functions</span><span class="chip">REST design</span><span class="chip">Docker</span><span class="chip">GitHub Actions CI</span><span class="chip">pytest</span></dd>
+    <dt>frontend</dt><dd><span class="chip">React</span><span class="chip">Astro</span><span class="chip">PWAs/service workers</span><span class="chip">Playwright and axe-core testing</span></dd>
   </dl>
 </div></section>
-
-<section id="education"><div class="wrap">
-  <h2><span class="idx">05</span>Education</h2>
+<section id="education"><div class="wrap"><h2><span class="idx">05</span>Education</h2>
   <div class="edu">
     <div class="card"><h3>Richard Taunton Sixth Form College</h3><p>A-Levels: Mathematics, Economics, Business Studies, 2026</p></div>
     <div class="card"><h3>King Edward VI School</h3><p>12 GCSEs, average grade 7.5, 2024</p></div>
   </div>
 </div></section>
-
 <footer id="contact"><div class="wrap">
   <div class="cta">Hiring for a junior analyst, quant developer or data role?</div>
   <p class="sub">Everything above that can be shown is linked. Happy to walk through any repo, test suite or backtest live.</p>
-  <a class="btn" href="mailto:daniel.s.e.hill9@gmail.com">email me</a>
-  <a class="btn" href="https://github.com/d-Trading165">github</a>
+  <div class="btns"><a class="btn primary" href="mailto:daniel.s.e.hill9@gmail.com">Email me</a>
+  <a class="btn" href="https://github.com/d-Trading165">GitHub</a>
+  <a class="btn dlb" href="/Daniel-Hill-CV.pdf" download>Download PDF</a></div>
   <div class="fine">Daniel S. E. Hill · Southampton, UK · British citizen, full right to work<br>No trackers, no analytics, no cookies. View source.</div>
 </div></footer>
-
 </body>
 </html>
