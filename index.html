@@ -89,10 +89,7 @@ header .dl .btn:hover{background:#fff;text-decoration:none}
 /* stat tickets */
 header .stats{margin-top:56px;grid-template-columns:repeat(4,1fr);gap:14px;background:transparent}
 header .stat{background:var(--lumber);color:var(--choc-deep);border-radius:12px;padding:20px 18px 18px;position:relative;overflow:hidden}
-header .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--maroon)}
-header .stat:nth-child(4n+2)::before{background:var(--blue)}
-header .stat:nth-child(4n+3)::before{background:var(--pink)}
-header .stat:nth-child(4n+4)::before{background:var(--choc)}
+header .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pink)}
 header .stat b{font-family:var(--serif);font-size:2.2rem;line-height:1;font-weight:400;color:var(--maroon-deep);margin-left:8px}
 header .stat b.sm{font-size:1.05rem;line-height:2.1;font-family:var(--mono);letter-spacing:-.02em}
 header .stat i{font-size:.74rem;color:var(--choc);margin:8px 0 0 8px;line-height:1.35}
@@ -138,6 +135,11 @@ section:nth-of-type(even) .job::after{box-shadow:0 0 0 4px var(--lumber)}
 .card:hover::before{background:var(--maroon)}
 .card h3{font-family:var(--mono);font-size:.96rem;font-weight:600}
 .card h3 a{color:var(--maroon-deep)}
+/* whole repo card is clickable: the title link stretches over the card */
+.card h3 a::after{content:"";position:absolute;inset:0;z-index:1;border-radius:14px}
+.card:hover h3 a{text-decoration:underline;text-underline-offset:3px}
+.card:has(h3 a:focus-visible){outline:2px solid var(--blue);outline-offset:3px}
+.card h3 a:focus-visible{outline:0}
 .card .badge{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--blue);border-radius:999px;padding:4px 11px;white-space:nowrap}
 .card p{color:var(--dim);font-size:.92rem}
 .card .foot{font-size:.74rem;color:var(--faint);font-family:var(--mono);border-top:1px dashed var(--line);padding-top:10px}
@@ -145,17 +147,11 @@ section:nth-of-type(even) .job::after{box-shadow:0 0 0 4px var(--lumber)}
 section .sub{color:var(--faint);font-size:.95rem;font-style:italic;font-family:var(--serif);margin-top:-30px}
 /* research */
 .rsr{margin-bottom:28px;padding:30px 34px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}
-.rsr.feature{background:var(--maroon-deep);color:var(--lumber);border:0;background-image:radial-gradient(ellipse 50% 70% at 100% 0%,rgba(220,151,165,.35),transparent 70%)}
 .rsr .tag{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-deep);font-weight:700}
-.rsr.feature .tag{color:var(--pink)}
 .rsr h3{margin:8px 0 12px;font-size:1.6rem}
-.rsr.feature h3{color:#fff}
 .rsr p{color:var(--dim);font-size:.96rem;line-height:1.7}
-.rsr.feature p{color:var(--lumber)}
-.rsr.feature .num{color:#fff}
 .rsr .pull{margin-top:18px;font-family:var(--serif);font-size:1.12rem;font-style:italic;color:var(--choc-deep);position:relative;padding-left:40px}
-.rsr .pull::before{content:"C";position:absolute;left:0;top:-14px;font-size:3.6rem;line-height:1;color:var(--pink);font-style:normal}
-.rsr.feature .pull{color:#fff}
+.rsr .pull::before{content:"\201C";position:absolute;left:0;top:-14px;font-size:3.6rem;line-height:1;color:var(--pink);font-style:normal}
 .rsr .sitelink{margin-top:14px;font-weight:600}
 /* skills chips */
 .skills{grid-template-columns:170px 1fr;gap:18px 24px}
@@ -267,7 +263,7 @@ body:has(#rm:checked) dl.skills dd{display: block !important; font-size: 9.5pt !
 body:has(#rm:checked) .chip{display: inline !important; padding: 0 !important; margin: 0 !important; font-size: 9.5pt !important; font-family: Georgia, serif !important;}
 body:has(#rm:checked) .chip:not(:last-child)::after{content: ", " !important; display: inline !important;}
 body:has(#rm:checked) .edu{display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 4pt 16pt !important;}
-body:has(#rm:checked) .edu .card{margin: 0 !important;}
+body:has(#rm:checked) .edu .card{margin: 0 !important; min-width: 0 !important;}
 body:has(#rm:checked) .edu .card h3{font-family: Georgia, serif !important; font-size: 10pt !important; font-weight: 700 !important;}
 body:has(#rm:checked) .edu .card p{font-size: 9.5pt !important;}
 body:has(#rm:checked) footer{margin: 9pt 0 0 !important; padding: 5pt 0 0 !important; border-top: 0.6pt solid #000 !important; text-align: left !important;}
@@ -288,6 +284,7 @@ body:has(#rm:checked) footer .btn{display:inline!important;padding:0!important;m
   body:has(#rm:checked) header .stat:nth-child(2n){border-right:0!important}
   body:has(#rm:checked) header .stat:nth-child(n+3){border-top:0.6pt solid #000!important}
   body:has(#rm:checked) header .stat:not(:nth-child(2n+1)){padding-left:8pt!important}
+  body:has(#rm:checked) .edu{grid-template-columns:1fr!important}
 }
 
 @media print{
@@ -359,7 +356,7 @@ dl.skills dd{display: block !important; font-size: 9.5pt !important; margin: 0 !
 .chip{display: inline !important; padding: 0 !important; margin: 0 !important; font-size: 9.5pt !important; font-family: Georgia, serif !important;}
 .chip:not(:last-child)::after{content: ", " !important; display: inline !important;}
 .edu{display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 4pt 16pt !important;}
-.edu .card{margin: 0 !important;}
+.edu .card{margin: 0 !important; min-width: 0 !important;}
 .edu .card h3{font-family: Georgia, serif !important; font-size: 10pt !important; font-weight: 700 !important;}
 .edu .card p{font-size: 9.5pt !important;}
 footer{margin: 9pt 0 0 !important; padding: 5pt 0 0 !important; border-top: 0.6pt solid #000 !important; text-align: left !important;}
@@ -537,14 +534,14 @@ footer .sub{font-size: 9pt !important; font-style: italic !important; color: #22
 </div></section>
 <section id="research"><div class="wrap"><h2><span class="idx">03</span>Independent research &amp; systems</h2>
   <p class="sub">Private code; methods and results discussed freely in interview.</p>
-  <div class="rsr feature">
-    <span class="tag">featured · data integrity</span>
+  <div class="rsr">
+    <span class="tag">data integrity</span>
     <h3>Auction mispricing scanner</h3>
     <p>Harvests auction sitemaps (~150k lots), extracts metal, purity and weight from lot titles and condition reports, and prices against live spot with FX conversion. Backtested over 40 closed auctions covering <span class="num">24,291 lots: 4 verified wins, £1,635 deployed, +£820 realised (~50% blended return on deployed capital)</span>.</p>
     <p class="pull">The number I'm prouder of is the one before it: the first backtest reported 62 wins and £18k of profit, all of it phantom. I traced 16 root causes, encoded each as a domain rule, and locked them behind 36 regression tests.</p>
   </div>
-  <div class="rsr feature">
-    <span class="tag">featured · research hardware</span>
+  <div class="rsr">
+    <span class="tag">research hardware</span>
     <h3>Neuromorphic computing system: "InteI" (formerly Dual ML)</h3>
     <p>An analogue "artificial subconscious": neuromodulator circuit models (dopamine, serotonin, noradrenaline, acetylcholine), Kuramoto oscillator banks, and physical-substrate simulation: ionic diffusion validated against Fick's law, surface-acoustic-wave propagation, and phase-shifting interferometry with tomographic 3D reconstruction. <span class="num">~43k LOC, 325 tests, 15 LTSpice schematics</span>, embedded C++ firmware, and a costed BOM with production part numbers (STM32F407, Artix-7, ADS1256). UKIPO patent application <span class="num">GB2603303.5</span> filed Feb 2026.</p>
     <p class="pull">After two years I audited my own timescale assumptions from first principles and found order-of-magnitude errors; the ionic chamber responds in hours, not milliseconds. I froze v1 and restarted behind a falsify-first gate: the cheapest disproving experiment runs before any build spend.</p>
