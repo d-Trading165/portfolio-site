@@ -47,7 +47,7 @@ footer{text-align:center}
 section .sub{margin:-16px 0 26px}
 .dl{margin-top:22px}
 .minor.refs{border-top:0;margin-top:8px;padding-top:0}
-.po{display:none!important}
+.po,.pdf-url{display:none!important}
 
 :root{
   --maroon:#B83556; --maroon-deep:#8E2641; --pink:#DC97A5; --pink-soft:#F3CFD6;
@@ -199,108 +199,175 @@ footer .fine{margin-top:48px;color:var(--pink);opacity:.8;font-size:.76rem}
 .rm-box:focus-visible+.rm-switch{outline:2px solid var(--blue);outline-offset:2px}
 nav .wrap{padding-right:190px}
 
-body:has(#rm:checked),body:has(#rm:checked) :not(.rm-switch,.rm-switch *){color:#000!important;background:#fff!important;background-image:none!important;box-shadow:none!important;text-shadow:none!important;transform:none!important;font-family:Georgia,"Times New Roman",serif!important;letter-spacing:0!important;text-transform:none!important;border-color:#000!important;opacity:1!important;font-style:normal!important}
-body:has(#rm:checked){font-size:15px;line-height:1.5}
-body:has(#rm:checked) .wrap{max-width:760px}
-body:has(#rm:checked) header{padding:28px 0 14px;overflow:visible}
-body:has(#rm:checked) header h1::after,body:has(#rm:checked) h2::after,body:has(#rm:checked) .job::before,body:has(#rm:checked) .job::after,body:has(#rm:checked) .card::before,body:has(#rm:checked) .rsr .pull::before,body:has(#rm:checked) nav .brand::before,body:has(#rm:checked) .marquee span::after,body:has(#rm:checked) .meta span::before,body:has(#rm:checked) nav a::after{display:none!important;content:none!important}
-body:has(#rm:checked) .marquee,body:has(#rm:checked) .mark,body:has(#rm:checked) h2 .idx,body:has(#rm:checked) .kicker,body:has(#rm:checked) nav,body:has(#rm:checked) .switch,body:has(#rm:checked) .rsr .tag{display:none!important}
-body:has(#rm:checked) section{padding:18px 0;border-top:1px solid #000}
-body:has(#rm:checked) h1{font-size:1.8rem;max-width:none;line-height:1.2}
-body:has(#rm:checked) h2{font-size:1.1rem;font-weight:700;margin-bottom:10px;padding-top:0}
-body:has(#rm:checked) h3{font-size:1rem}
-body:has(#rm:checked) .tagline{margin:10px 0 12px;max-width:none;font-size:1rem;line-height:1.5}
-body:has(#rm:checked) .meta,body:has(#rm:checked) .meta span,body:has(#rm:checked) .grid,body:has(#rm:checked) .stats,body:has(#rm:checked) .stat,body:has(#rm:checked) .edu,body:has(#rm:checked) .skills,body:has(#rm:checked) .skills dd,body:has(#rm:checked) .card,body:has(#rm:checked) .card .top,body:has(#rm:checked) .btns,body:has(#rm:checked) .dl{display:block}
-body:has(#rm:checked) .meta span{border:0!important;padding:0;margin:0 0 2px}
-body:has(#rm:checked) .card,body:has(#rm:checked) .job,body:has(#rm:checked) .rsr,body:has(#rm:checked) .stats,body:has(#rm:checked) .stat,body:has(#rm:checked) .principle,body:has(#rm:checked) .btn,body:has(#rm:checked) .badge,body:has(#rm:checked) .minor,body:has(#rm:checked) .skills,body:has(#rm:checked) .chip,body:has(#rm:checked) .when,body:has(#rm:checked) .card .foot{border:0!important;border-radius:0!important;padding:0!important;margin-left:0!important;margin-right:0!important}
-body:has(#rm:checked) .stats{margin-top:14px}
-body:has(#rm:checked) .stat{margin-bottom:3px;overflow:visible}
-body:has(#rm:checked) .stat::before{display:none!important}
-body:has(#rm:checked) .stat b{display:inline!important;font-size:1rem!important;line-height:inherit!important;margin:0 6px 0 0!important;font-weight:700}
-body:has(#rm:checked) .stat i{display:inline!important;font-size:1rem!important;margin:0!important}
-body:has(#rm:checked) .principle{margin-top:14px;text-align:left;font-size:1rem}
-body:has(#rm:checked) .card,body:has(#rm:checked) .job,body:has(#rm:checked) .rsr{margin-bottom:14px}
-body:has(#rm:checked) .job .head{display:block}
-body:has(#rm:checked) .job h3 .rolename{font-size:1rem}
-body:has(#rm:checked) .job li{padding-left:16px;font-size:1rem}
-body:has(#rm:checked) .job li::before{content:"\2013"!important;display:inline!important;width:auto!important;height:auto!important;background:none!important;outline:0!important;border-radius:0!important;top:0!important}
-body:has(#rm:checked) .when{display:inline;font-size:.9rem;font-weight:400}
-body:has(#rm:checked) .badge{display:inline;font-size:.85rem}
-body:has(#rm:checked) .card h3,body:has(#rm:checked) .rsr h3{font-size:1rem;margin:0 0 4px}
-body:has(#rm:checked) .card p,body:has(#rm:checked) .rsr p{font-size:1rem}
-body:has(#rm:checked) .skills dt{font-weight:700;margin-top:6px;font-size:1rem}
-body:has(#rm:checked) .chip{display:inline;font-size:1rem}
-body:has(#rm:checked) .chip:not(:last-child)::after{content:", "}
-body:has(#rm:checked) .pull{padding-left:0;font-size:1rem}
-body:has(#rm:checked) a{text-decoration:underline}
-body:has(#rm:checked) a[href^="http"]::after{content:" <" attr(href) ">";font-size:.85em;word-break:break-all}
-body:has(#rm:checked) .meta a::after{content:none}
-body:has(#rm:checked) footer{text-align:left;padding:18px 0 40px;border-top:1px solid #000;overflow:visible}
-body:has(#rm:checked) .btn{display:inline;margin:0 14px 0 0;font-size:1rem}
-body:has(#rm:checked) .minor{margin-left:0}
-body:has(#rm:checked) .refs{margin-top:4px}
-body:has(#rm:checked) footer .cta{font-size:1.2rem;font-weight:700;margin-bottom:6px}
-body:has(#rm:checked) footer .sub{opacity:1;margin-bottom:10px}
+/* RM-START */
+body:has(#rm:checked) *:where(:not(.rm-box,body:has(#rm:checked) .rm-switch,body:has(#rm:checked) .rm-switch *)),body:has(#rm:checked) *:where(:not(.rm-switch,body:has(#rm:checked) .rm-switch *))::before,body:has(#rm:checked) *:where(:not(.rm-switch,body:has(#rm:checked) .rm-switch *))::after{color: #000 !important; background: none !important; background-image: none !important; box-shadow: none !important; text-shadow: none !important; transform: none !important; letter-spacing: 0 !important; text-transform: none !important; opacity: 1 !important; border: 0 !important; border-radius: 0 !important; outline: 0 !important; font-style: normal !important; position: static !important; float: none !important; animation: none !important; transition: none !important;}
+body:has(#rm:checked) *:where(:not(.rm-switch,body:has(#rm:checked) .rm-switch *))::before,body:has(#rm:checked) *:where(:not(.rm-switch,body:has(#rm:checked) .rm-switch *))::after{content: none !important; display: none !important;}
+html:has(#rm:checked){font-size: 10pt;}
+body:has(#rm:checked){font-family: Georgia, "Times New Roman", serif !important; font-size: 10pt !important; line-height: 1.32 !important; background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;}
+body:has(#rm:checked) .wrap{max-width: none !important; padding: 0 !important; margin: 0 !important;}
+body:has(#rm:checked) nav,body:has(#rm:checked) .switch,body:has(#rm:checked) .marquee,body:has(#rm:checked) .mark,body:has(#rm:checked) .kicker,body:has(#rm:checked) h2 .idx,body:has(#rm:checked) .rsr .tag,body:has(#rm:checked) .btns,body:has(#rm:checked) footer .fine,body:has(#rm:checked) footer .cta,body:has(#rm:checked) .sep{display: none !important;}
+body:has(#rm:checked) a{color: #000 !important; text-decoration: none !important;}
+body:has(#rm:checked) p,body:has(#rm:checked) li{orphans: 3; widows: 3;}
+body:has(#rm:checked) h2,body:has(#rm:checked) h3,body:has(#rm:checked) .head,body:has(#rm:checked) .role,body:has(#rm:checked) .card .top{break-after: avoid; page-break-after: avoid;}
+body:has(#rm:checked) li,body:has(#rm:checked) .card,body:has(#rm:checked) .edu .card,body:has(#rm:checked) .rsr,body:has(#rm:checked) .stat,body:has(#rm:checked) .pull{break-inside: avoid; page-break-inside: avoid;}
+body:has(#rm:checked) b,body:has(#rm:checked) strong{font-weight: 700;}
+body:has(#rm:checked) header{padding: 0 0 9pt !important; margin: 0 !important; border-bottom: 1.5pt solid #000 !important;}
+body:has(#rm:checked) header h1{font-size: 22pt !important; font-weight: 400 !important; line-height: 1.05 !important; margin: 0 0 1pt !important; max-width: none !important;}
+body:has(#rm:checked) header .tagline{font-size: 10pt !important; line-height: 1.32 !important; margin: 6pt 0 5pt !important; max-width: none !important;}
+body:has(#rm:checked) header .meta{display: block !important; font-size: 8.8pt !important; margin: 0 !important; line-height: 1.4 !important;}
+body:has(#rm:checked) header .meta span{display: inline !important; padding: 0 !important; margin: 0 !important; white-space: nowrap !important;}
+body:has(#rm:checked) header .meta span:not(:last-child)::after{content: "\00a0\00a0\00b7\00a0" !important; display: inline !important;}
+body:has(#rm:checked) header .meta a{text-decoration: none !important;}
+body:has(#rm:checked) header .dl{display: none !important;}
+body:has(#rm:checked) header .stats{display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 0 !important; margin: 8pt 0 0 !important; padding: 0 !important; border-top: 0.6pt solid #000 !important; border-bottom: 0.6pt solid #000 !important;}
+body:has(#rm:checked) header .stat{display: block !important; padding: 4pt 8pt 4pt 0 !important; margin: 0 !important; border-right: 0.6pt solid #000 !important; overflow: visible !important;}
+body:has(#rm:checked) header .stat:nth-child(4n){border-right: 0 !important;}
+body:has(#rm:checked) header .stat:nth-child(n+5){border-top: 0.6pt solid #000 !important;}
+body:has(#rm:checked) header .stat:not(:nth-child(4n+1)){padding-left: 8pt !important;}
+body:has(#rm:checked) header .stat b{display: block !important; font-size: 13pt !important; line-height: 1.1 !important; font-weight: 700 !important; margin: 0 !important; font-family: Georgia, serif !important;}
+body:has(#rm:checked) header .stat b.sm{font-size: 10.5pt !important; line-height: 1.35 !important;}
+body:has(#rm:checked) header .stat i{display: block !important; font-size: 7.6pt !important; line-height: 1.25 !important; margin: 1pt 0 0 !important; color: #222 !important;}
+body:has(#rm:checked) header .principle{margin: 7pt 0 0 !important; padding: 0 !important; font-size: 9pt !important; line-height: 1.3 !important; text-align: left !important; color: #222 !important;}
+body:has(#rm:checked) header .principle q{font-style: italic !important;}
+body:has(#rm:checked) header .principle q::before,body:has(#rm:checked) header .principle q::after{content: none !important;}
+body:has(#rm:checked) section{padding: 0 !important; margin: 0 !important;}
+body:has(#rm:checked) section .wrap{padding: 0 !important;}
+body:has(#rm:checked) h2{font-size: 9.5pt !important; font-weight: 700 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; margin: 11pt 0 5pt !important; padding: 0 0 2pt !important; border-bottom: 0.6pt solid #000 !important; line-height: 1.3 !important;}
+body:has(#rm:checked) section .sub{font-size: 9pt !important; font-style: italic !important; margin: -2pt 0 5pt !important; color: #222 !important;}
+body:has(#rm:checked) .minor{font-size: 8.6pt !important; font-style: italic !important; margin: 5pt 0 0 !important; padding: 0 !important; color: #222 !important; line-height: 1.3 !important;}
+body:has(#rm:checked) .minor.refs{margin-top: 2pt !important;}
+body:has(#rm:checked) .job{margin: 0 0 7pt !important; padding: 0 !important;}
+body:has(#rm:checked) .job .head{display: flex !important; justify-content: space-between !important; align-items: baseline !important; flex-wrap: nowrap !important; gap: 10pt !important; margin: 0 0 1pt !important;}
+body:has(#rm:checked) .job h3{font-size: 10.5pt !important; font-weight: 700 !important; margin: 0 !important; line-height: 1.25 !important;}
+body:has(#rm:checked) .job h3 .rolename{font-weight: 400 !important; font-size: 10.5pt !important; font-family: Georgia, serif !important;}
+body:has(#rm:checked) .job h3 .sep{display: inline !important; font-weight: 400 !important;}
+body:has(#rm:checked) .job .when{display: block !important; font-size: 9pt !important; white-space: nowrap !important; font-weight: 400 !important; color: #222 !important;}
+body:has(#rm:checked) .job .role{font-size: 9.5pt !important; font-style: italic !important; margin: 0 0 2.5pt !important; color: #222 !important;}
+body:has(#rm:checked) .job ul{list-style: none !important; margin: 0 !important; padding: 0 !important;}
+body:has(#rm:checked) .job li{display: list-item !important; position: relative !important; padding: 0 0 0 10pt !important; margin: 0 0 2pt !important; line-height: 1.3 !important;}
+body:has(#rm:checked) .job li::before{content: "\2013" !important; display: block !important; position: absolute !important; left: 0 !important; top: 0 !important; width: auto !important; height: auto !important;}
+body:has(#rm:checked) .grid{display: block !important;}
+body:has(#rm:checked) .card{display: block !important; margin: 0 0 5pt !important; padding: 0 !important;}
+body:has(#rm:checked) .card .top{display: flex !important; justify-content: space-between !important; align-items: baseline !important; gap: 10pt !important; margin: 0 !important;}
+body:has(#rm:checked) .card h3{font-family: Consolas, "Courier New", monospace !important; font-size: 9.6pt !important; font-weight: 700 !important; margin: 0 !important; overflow-wrap: anywhere;}
+body:has(#rm:checked) .card .badge{display: inline !important; font-size: 8.6pt !important; white-space: nowrap !important; padding: 0 !important; margin: 0 !important; color: #222 !important;}
+body:has(#rm:checked) .card p{font-size: 9.5pt !important; margin: 0.5pt 0 0 !important; line-height: 1.3 !important;}
+body:has(#rm:checked) .card .foot{display: block !important; font-family: Consolas, "Courier New", monospace !important; font-size: 7.8pt !important; margin: 1pt 0 0 !important; padding: 0 !important; color: #333 !important; line-height: 1.3 !important;}
+body:has(#rm:checked) .card .pdf-url{display: block !important; font-family: Consolas, "Courier New", monospace !important; font-size: 7.8pt !important; color: #333 !important; line-height: 1.3 !important;}
+body:has(#rm:checked) .card .pdf-url a{color: #333 !important;}
+body:has(#rm:checked) #open-source .minor{margin-top: 3pt !important;}
+body:has(#rm:checked) .rsr{margin: 0 0 6pt !important; padding: 0 !important;}
+body:has(#rm:checked) .rsr h3{font-size: 10.5pt !important; font-weight: 700 !important; margin: 0 0 1pt !important; line-height: 1.25 !important;}
+body:has(#rm:checked) .rsr p{font-size: 9.5pt !important; margin: 0 !important; line-height: 1.3 !important; max-width: none !important;}
+body:has(#rm:checked) .rsr .pull{margin: 3pt 0 0 !important; padding: 0 0 0 8pt !important; border-left: 1.5pt solid #000 !important; font-style: italic !important; font-size: 9.2pt !important; color: #222 !important;}
+body:has(#rm:checked) .num{font-weight: 700 !important;}
+body:has(#rm:checked) dl.skills{display: grid !important; grid-template-columns: 70pt 1fr !important; gap: 2pt 8pt !important; margin: 0 !important; padding: 0 !important;}
+body:has(#rm:checked) dl.skills dt{font-weight: 700 !important; font-size: 9.5pt !important; margin: 0 !important; padding: 0 !important;}
+body:has(#rm:checked) dl.skills dd{display: block !important; font-size: 9.5pt !important; margin: 0 !important; padding: 0 !important; line-height: 1.3 !important;}
+body:has(#rm:checked) .chip{display: inline !important; padding: 0 !important; margin: 0 !important; font-size: 9.5pt !important; font-family: Georgia, serif !important;}
+body:has(#rm:checked) .chip:not(:last-child)::after{content: ", " !important; display: inline !important;}
+body:has(#rm:checked) .edu{display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 4pt 16pt !important;}
+body:has(#rm:checked) .edu .card{margin: 0 !important;}
+body:has(#rm:checked) .edu .card h3{font-family: Georgia, serif !important; font-size: 10pt !important; font-weight: 700 !important;}
+body:has(#rm:checked) .edu .card p{font-size: 9.5pt !important;}
+body:has(#rm:checked) footer{margin: 9pt 0 0 !important; padding: 5pt 0 0 !important; border-top: 0.6pt solid #000 !important; text-align: left !important;}
+body:has(#rm:checked) footer .sub{font-size: 9pt !important; font-style: italic !important; color: #222 !important; margin: 0 !important;}
+/* RM-END */
+/* recruiter mode on screen only: page width, readable size, keep the download link and a plain footer */
+body:has(#rm:checked){zoom:1.12}
+body:has(#rm:checked) .wrap{max-width:186mm!important;margin:0 auto!important;padding:0 20px!important}
+body:has(#rm:checked) header{padding-top:52px!important}
+body:has(#rm:checked) header .dl{display:block!important;margin:6pt 0 0!important}
+body:has(#rm:checked) header .dl .btn{display:inline!important;padding:0!important;font-size:9pt!important;text-decoration:underline!important}
+body:has(#rm:checked) footer{display:block!important;padding-bottom:40px!important}
+body:has(#rm:checked) footer .btns{display:block!important;margin-top:4pt!important}
+body:has(#rm:checked) footer .btn{display:inline!important;padding:0!important;margin:0 12pt 0 0!important;font-size:9pt!important;text-decoration:underline!important}
+@media(max-width:600px){
+  body:has(#rm:checked) .job .head,body:has(#rm:checked) .card .top{flex-wrap:wrap!important}
+  body:has(#rm:checked) header .stats{grid-template-columns:1fr 1fr!important}
+  body:has(#rm:checked) header .stat:nth-child(2n){border-right:0!important}
+  body:has(#rm:checked) header .stat:nth-child(n+3){border-top:0.6pt solid #000!important}
+  body:has(#rm:checked) header .stat:not(:nth-child(2n+1)){padding-left:8pt!important}
+}
 
-@page{size:A4;margin:16mm 15mm}
 @media print{
-nav,.rm-switch,.rm-box,.dl,.btn,footer .fine,.switch{display:none!important}
-.po{display:block!important}
-html{font-size:12.5px}
-li,.card,.stat,.head,h2,h3{break-inside:avoid}
-h2,h3,.head,.role,.skills dt{break-after:avoid}
-.wrap{max-width:none!important;padding:0!important}
-body{font-size:12.5px!important;line-height:1.4!important}
-header{padding:0 0 10px!important}
-section{padding:12px 0!important}
-footer{padding:12px 0 0!important}
-.job{margin-top:16px!important}
-.job li{margin-bottom:5px!important}
-.card,.feature,.rsr{margin-bottom:9px!important}
-
-body,body :not(.rm-switch,.rm-switch *){color:#000!important;background:#fff!important;background-image:none!important;box-shadow:none!important;text-shadow:none!important;transform:none!important;font-family:Georgia,"Times New Roman",serif!important;letter-spacing:0!important;text-transform:none!important;border-color:#000!important;opacity:1!important;font-style:normal!important}
-body{font-size:15px;line-height:1.5}
-body .wrap{max-width:760px}
-body header{padding:28px 0 14px;overflow:visible}
-body header h1::after,body h2::after,body .job::before,body .job::after,body .card::before,body .rsr .pull::before,body nav .brand::before,body .marquee span::after,body .meta span::before,body nav a::after{display:none!important;content:none!important}
-body .marquee,body .mark,body h2 .idx,body .kicker,body nav,body .switch,body .rsr .tag{display:none!important}
-body section{padding:18px 0;border-top:1px solid #000}
-body h1{font-size:1.8rem;max-width:none;line-height:1.2}
-body h2{font-size:1.1rem;font-weight:700;margin-bottom:10px;padding-top:0}
-body h3{font-size:1rem}
-body .tagline{margin:10px 0 12px;max-width:none;font-size:1rem;line-height:1.5}
-body .meta,body .meta span,body .grid,body .stats,body .stat,body .edu,body .skills,body .skills dd,body .card,body .card .top,body .btns,body .dl{display:block}
-body .meta span{border:0!important;padding:0;margin:0 0 2px}
-body .card,body .job,body .rsr,body .stats,body .stat,body .principle,body .btn,body .badge,body .minor,body .skills,body .chip,body .when,body .card .foot{border:0!important;border-radius:0!important;padding:0!important;margin-left:0!important;margin-right:0!important}
-body .stats{margin-top:14px}
-body .stat{margin-bottom:3px;overflow:visible}
-body .stat::before{display:none!important}
-body .stat b{display:inline!important;font-size:1rem!important;line-height:inherit!important;margin:0 6px 0 0!important;font-weight:700}
-body .stat i{display:inline!important;font-size:1rem!important;margin:0!important}
-body .principle{margin-top:14px;text-align:left;font-size:1rem}
-body .card,body .job,body .rsr{margin-bottom:14px}
-body .job .head{display:block}
-body .job h3 .rolename{font-size:1rem}
-body .job li{padding-left:16px;font-size:1rem}
-body .job li::before{content:"\2013"!important;display:inline!important;width:auto!important;height:auto!important;background:none!important;outline:0!important;border-radius:0!important;top:0!important}
-body .when{display:inline;font-size:.9rem;font-weight:400}
-body .badge{display:inline;font-size:.85rem}
-body .card h3,body .rsr h3{font-size:1rem;margin:0 0 4px}
-body .card p,body .rsr p{font-size:1rem}
-body .skills dt{font-weight:700;margin-top:6px;font-size:1rem}
-body .chip{display:inline;font-size:1rem}
-body .chip:not(:last-child)::after{content:", "}
-body .pull{padding-left:0;font-size:1rem}
-body a{text-decoration:underline}
-body a[href^="http"]::after{content:" <" attr(href) ">";font-size:.85em;word-break:break-all}
-body .meta a::after{content:none}
-body footer{text-align:left;padding:18px 0 40px;border-top:1px solid #000;overflow:visible}
-body .btn{display:inline;margin:0 14px 0 0;font-size:1rem}
-body .minor{margin-left:0}
-body .refs{margin-top:4px}
-body footer .cta{font-size:1.2rem;font-weight:700;margin-bottom:6px}
-body footer .sub{opacity:1;margin-bottom:10px}
-
+/* PRINT-START */
+*:where(:not(.rm-box, .rm-switch, .rm-switch *)), *:where(:not(.rm-switch, .rm-switch *))::before, *:where(:not(.rm-switch, .rm-switch *))::after{color: #000 !important; background: none !important; background-image: none !important; box-shadow: none !important; text-shadow: none !important; transform: none !important; letter-spacing: 0 !important; text-transform: none !important; opacity: 1 !important; border: 0 !important; border-radius: 0 !important; outline: 0 !important; font-style: normal !important; position: static !important; float: none !important; animation: none !important; transition: none !important;}
+*:where(:not(.rm-switch, .rm-switch *))::before, *:where(:not(.rm-switch, .rm-switch *))::after{content: none !important; display: none !important;}
+html{font-size: 10pt;}
+body{font-family: Georgia, "Times New Roman", serif !important; font-size: 10pt !important; line-height: 1.32 !important; background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact;}
+.wrap{max-width: none !important; padding: 0 !important; margin: 0 !important;}
+nav, .switch, .marquee, .mark, .kicker, h2 .idx, .rsr .tag, .btns, footer .fine, footer .cta, .sep{display: none !important;}
+a{color: #000 !important; text-decoration: none !important;}
+p, li{orphans: 3; widows: 3;}
+h2, h3, .head, .role, .card .top{break-after: avoid; page-break-after: avoid;}
+li, .card, .edu .card, .rsr, .stat, .pull{break-inside: avoid; page-break-inside: avoid;}
+b, strong{font-weight: 700;}
+header{padding: 0 0 9pt !important; margin: 0 !important; border-bottom: 1.5pt solid #000 !important;}
+header h1{font-size: 22pt !important; font-weight: 400 !important; line-height: 1.05 !important; margin: 0 0 1pt !important; max-width: none !important;}
+header .tagline{font-size: 10pt !important; line-height: 1.32 !important; margin: 6pt 0 5pt !important; max-width: none !important;}
+header .meta{display: block !important; font-size: 8.8pt !important; margin: 0 !important; line-height: 1.4 !important;}
+header .meta span{display: inline !important; padding: 0 !important; margin: 0 !important; white-space: nowrap !important;}
+header .meta span:not(:last-child)::after{content: "\00a0\00a0\00b7\00a0" !important; display: inline !important;}
+header .meta a{text-decoration: none !important;}
+header .dl{display: none !important;}
+header .stats{display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 0 !important; margin: 8pt 0 0 !important; padding: 0 !important; border-top: 0.6pt solid #000 !important; border-bottom: 0.6pt solid #000 !important;}
+header .stat{display: block !important; padding: 4pt 8pt 4pt 0 !important; margin: 0 !important; border-right: 0.6pt solid #000 !important; overflow: visible !important;}
+header .stat:nth-child(4n){border-right: 0 !important;}
+header .stat:nth-child(n+5){border-top: 0.6pt solid #000 !important;}
+header .stat:not(:nth-child(4n+1)){padding-left: 8pt !important;}
+header .stat b{display: block !important; font-size: 13pt !important; line-height: 1.1 !important; font-weight: 700 !important; margin: 0 !important; font-family: Georgia, serif !important;}
+header .stat b.sm{font-size: 10.5pt !important; line-height: 1.35 !important;}
+header .stat i{display: block !important; font-size: 7.6pt !important; line-height: 1.25 !important; margin: 1pt 0 0 !important; color: #222 !important;}
+header .principle{margin: 7pt 0 0 !important; padding: 0 !important; font-size: 9pt !important; line-height: 1.3 !important; text-align: left !important; color: #222 !important;}
+header .principle q{font-style: italic !important;}
+header .principle q::before, header .principle q::after{content: none !important;}
+section{padding: 0 !important; margin: 0 !important;}
+section .wrap{padding: 0 !important;}
+h2{font-size: 9.5pt !important; font-weight: 700 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; margin: 11pt 0 5pt !important; padding: 0 0 2pt !important; border-bottom: 0.6pt solid #000 !important; line-height: 1.3 !important;}
+section .sub{font-size: 9pt !important; font-style: italic !important; margin: -2pt 0 5pt !important; color: #222 !important;}
+.minor{font-size: 8.6pt !important; font-style: italic !important; margin: 5pt 0 0 !important; padding: 0 !important; color: #222 !important; line-height: 1.3 !important;}
+.minor.refs{margin-top: 2pt !important;}
+.job{margin: 0 0 7pt !important; padding: 0 !important;}
+.job .head{display: flex !important; justify-content: space-between !important; align-items: baseline !important; flex-wrap: nowrap !important; gap: 10pt !important; margin: 0 0 1pt !important;}
+.job h3{font-size: 10.5pt !important; font-weight: 700 !important; margin: 0 !important; line-height: 1.25 !important;}
+.job h3 .rolename{font-weight: 400 !important; font-size: 10.5pt !important; font-family: Georgia, serif !important;}
+.job h3 .sep{display: inline !important; font-weight: 400 !important;}
+.job .when{display: block !important; font-size: 9pt !important; white-space: nowrap !important; font-weight: 400 !important; color: #222 !important;}
+.job .role{font-size: 9.5pt !important; font-style: italic !important; margin: 0 0 2.5pt !important; color: #222 !important;}
+.job ul{list-style: none !important; margin: 0 !important; padding: 0 !important;}
+.job li{display: list-item !important; position: relative !important; padding: 0 0 0 10pt !important; margin: 0 0 2pt !important; line-height: 1.3 !important;}
+.job li::before{content: "\2013" !important; display: block !important; position: absolute !important; left: 0 !important; top: 0 !important; width: auto !important; height: auto !important;}
+.grid{display: block !important;}
+.card{display: block !important; margin: 0 0 5pt !important; padding: 0 !important;}
+.card .top{display: flex !important; justify-content: space-between !important; align-items: baseline !important; gap: 10pt !important; margin: 0 !important;}
+.card h3{font-family: Consolas, "Courier New", monospace !important; font-size: 9.6pt !important; font-weight: 700 !important; margin: 0 !important; overflow-wrap: anywhere;}
+.card .badge{display: inline !important; font-size: 8.6pt !important; white-space: nowrap !important; padding: 0 !important; margin: 0 !important; color: #222 !important;}
+.card p{font-size: 9.5pt !important; margin: 0.5pt 0 0 !important; line-height: 1.3 !important;}
+.card .foot{display: block !important; font-family: Consolas, "Courier New", monospace !important; font-size: 7.8pt !important; margin: 1pt 0 0 !important; padding: 0 !important; color: #333 !important; line-height: 1.3 !important;}
+.card .pdf-url{display: block !important; font-family: Consolas, "Courier New", monospace !important; font-size: 7.8pt !important; color: #333 !important; line-height: 1.3 !important;}
+.card .pdf-url a{color: #333 !important;}
+#open-source .minor{margin-top: 3pt !important;}
+.rsr{margin: 0 0 6pt !important; padding: 0 !important;}
+.rsr h3{font-size: 10.5pt !important; font-weight: 700 !important; margin: 0 0 1pt !important; line-height: 1.25 !important;}
+.rsr p{font-size: 9.5pt !important; margin: 0 !important; line-height: 1.3 !important; max-width: none !important;}
+.rsr .pull{margin: 3pt 0 0 !important; padding: 0 0 0 8pt !important; border-left: 1.5pt solid #000 !important; font-style: italic !important; font-size: 9.2pt !important; color: #222 !important;}
+.num{font-weight: 700 !important;}
+dl.skills{display: grid !important; grid-template-columns: 70pt 1fr !important; gap: 2pt 8pt !important; margin: 0 !important; padding: 0 !important;}
+dl.skills dt{font-weight: 700 !important; font-size: 9.5pt !important; margin: 0 !important; padding: 0 !important;}
+dl.skills dd{display: block !important; font-size: 9.5pt !important; margin: 0 !important; padding: 0 !important; line-height: 1.3 !important;}
+.chip{display: inline !important; padding: 0 !important; margin: 0 !important; font-size: 9.5pt !important; font-family: Georgia, serif !important;}
+.chip:not(:last-child)::after{content: ", " !important; display: inline !important;}
+.edu{display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 4pt 16pt !important;}
+.edu .card{margin: 0 !important;}
+.edu .card h3{font-family: Georgia, serif !important; font-size: 10pt !important; font-weight: 700 !important;}
+.edu .card p{font-size: 9.5pt !important;}
+footer{margin: 9pt 0 0 !important; padding: 5pt 0 0 !important; border-top: 0.6pt solid #000 !important; text-align: left !important;}
+footer .sub{font-size: 9pt !important; font-style: italic !important; color: #222 !important; margin: 0 !important;}
+(PDF and browser printing) ======================= */ @page{size: A4; margin: 13mm 14mm 15mm;}
+.rm-box, .rm-switch, footer{display: none !important;}
+.po{display: inline !important;}
+/* PRINT-END */
 }
 </style>
 </head>
@@ -401,56 +468,67 @@ body footer .sub{opacity:1;margin-bottom:10px}
   <div class="grid">
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/execution-engine">execution-engine</a></h3><span class="badge">165 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/execution-engine">github.com/d-Trading165/execution-engine</a></div>
       <p>Broker-agnostic trade execution layer: signal validation chain, pre-trade risk gateway with registerable checks, order/fill/position lifecycle, a seeded simulated broker, and a three-state outcome-level circuit breaker with drawdown-scaled position sizing. Contains no strategy by construction: signals arrive as injected objects, so the engine can be tested without one.</p>
       <div class="foot">Python · 4.4k LOC · pure stdlib</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/gateway-rotator">gateway-rotator</a></h3><span class="badge">66 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/gateway-rotator">github.com/d-Trading165/gateway-rotator</a></div>
       <p>LLM provider failover: same model, same history, next provider when one fails. Per-gateway circuit breakers with exponential cooldown, an error taxonomy separating gateway-level from model-level failures, SSE stream-restart semantics, and an OpenAI-compatible proxy. Adding a provider is one YAML entry.</p>
       <div class="foot">Python · library + CLI + proxy · offline test suite · 22-provider working config</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/tiered-storage-engine">tiered-storage-engine</a></h3><span class="badge">91 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/tiered-storage-engine">github.com/d-Trading165/tiered-storage-engine</a></div>
       <p>Hot/warm/cold object store with per-payload codec selection and a FastAPI control plane. Benchmarked with the causes written up, including a 288&times; store/retrieve asymmetry traced to triple compression in auto mode. The Rust core ships as source, documented as never compiled; no claim is made for it.</p>
       <div class="foot">Python + Rust · benchmarks committed</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/py-complexity-radar">py-complexity-radar</a></h3><span class="badge">60 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/py-complexity-radar">github.com/d-Trading165/py-complexity-radar</a></div>
       <p>Dependency-free AST-based cyclomatic complexity analyser: per-function scoring, risk banding, JSON/Markdown reports, and trend tracking so complexity drift is visible across runs. Documents exactly where it deviates from strict McCabe, and ships an analysis of its own source as the worked example.</p>
       <div class="foot">Python · zero runtime dependencies · CI ratchet flag for pipelines</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/resilient-pipeline">resilient-pipeline</a></h3><span class="badge">58 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/resilient-pipeline">github.com/d-Trading165/resilient-pipeline</a></div>
       <p>Data standardization plus a four-tier degradation ladder: retry, then a fallback calculation, then a simplified operation, then an emergency default. Fallbacks are domain code registered per operation type. Includes quality scoring and an IQR outlier budget that rejects bad data rather than silently repairing it.</p>
       <div class="foot">Python · extracted from the private trading-research system</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/ohlc-volatility">ohlc-volatility</a></h3><span class="badge">23 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/ohlc-volatility">github.com/d-Trading165/ohlc-volatility</a></div>
       <p>Runs the range-based volatility estimators (Parkinson, Garman-Klass, Rogers-Satchell, Yang-Zhang) side by side so the numbers can disagree visibly. Adds adaptive Bollinger, ATR and Keltner analysis, and diagnostics for when GARCH-family models are, and are not, appropriate. A 215-method suite.</p>
       <div class="foot">Python · NumPy core, SciPy imported lazily · property-based tests</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/quant-stat-lab">quant-stat-lab</a></h3><span class="badge">12 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/quant-stat-lab">github.com/d-Trading165/quant-stat-lab</a></div>
       <p>Advanced statistics for noisy series: L-moments, robust statistics, bootstrap analysis, extreme-value analysis, nonparametric tests, and a Bayesian block: conjugate posteriors, change-point detection, Bayes-factor model comparison, and posterior predictive checks.</p>
       <div class="foot">Python + SciPy · validate-then-calculate contract throughout</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/autonomous-math-lab">autonomous-math-lab</a></h3><span class="badge">132 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/autonomous-math-lab">github.com/d-Trading165/autonomous-math-lab</a></div>
       <p>An autonomous mathematics research engine. Seven pluggable modules (Collatz, Goldbach, prime distribution, graph theory, symbolic regression, cellular automata, dynamical systems) run under expected-value task scheduling with psutil-enforced compute budgets. An <span class="num">independent verification engine re-derives findings</span> rather than trusting the module that produced them. Ran unattended for 3 days / 107 research cycles.</p>
       <div class="foot">Python · ~28k LOC · SQLite/PostgreSQL/MongoDB persistence behind one interface</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/uif-physics">uif-physics</a></h3><span class="badge">81 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/uif-physics">github.com/d-Trading165/uif-physics</a></div>
       <p>A binary-lattice physics laboratory: measured emergent inverse-square attraction (exponent <span class="num">2.09</span>), mass proportionality <span class="num">r = 0.891</span>, FFT-accelerated long-range solves, a ring-decomposed retarded potential (causality at one cell per tick, static-grid equivalence to 1e-14), and a THEORY_CONFLICTS.md recording where the results contradict the theory.</p>
       <div class="foot">Python · NumPy/SciPy · ~31k LOC · checkpoint/replay + plugin layer</div>
     </div>
     <div class="card">
       <div class="top"><h3><a href="https://github.com/d-Trading165/regime-lab">regime-lab</a></h3><span class="badge">97 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/regime-lab">github.com/d-Trading165/regime-lab</a></div>
       <p>From-scratch two-state Gaussian HMM, a strictly walk-forward regime gate with bit-exact no-lookahead tests, and a Politis–Romano stationary bootstrap for Sharpe confidence intervals. Ships the negative result it was built to find: every gated variant underperformed the ungated strategy (<span class="num">+0.33 vs +0.21/+0.20/+0.24</span>).</p>
       <div class="foot">Python · NumPy-only · arrays in, arrays out</div>
     </div>
     <div class="card wide">
       <div class="top"><h3><a href="https://github.com/d-Trading165/struct-log-alert">struct-log-alert</a></h3><span class="badge">45 tests · CI</span></div>
+<div class="pdf-url"><a href="https://github.com/d-Trading165/struct-log-alert">github.com/d-Trading165/struct-log-alert</a></div>
       <p>Stdlib-only structured logging with correlation-ID propagation, plus a severity-ranked alert manager with acknowledgment, rate limiting and injectable delivery senders (no network I/O by default). Publishing it fixed an inherited bug the suite caught: severity comparison by enum string meant "error" &lt; "info", silently dropping ERROR alerts.</p>
       <div class="foot">Python · zero runtime dependencies</div>
     </div>
